@@ -58,6 +58,7 @@
   font-weight: 500;
   font-size: 14px;
   box-sizing: border-box;
+  transition: background-color .15s,color .15s ease-in-out;
 }
 
 #signup:hover {
