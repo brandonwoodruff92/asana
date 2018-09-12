@@ -1,0 +1,17 @@
+.asana-moto {
+  font-size: calc(33.75px + 11.25 * ((100vw - 480px) / 800));
+}
+
+.asana-statement {
+
+}
+
+.marketing-content {
+  margin-left: 32px;
+  margin-right: 32px;
+  margin-top: 128px;
+}
+
+.statement-content {
+  text-align: center;
+}

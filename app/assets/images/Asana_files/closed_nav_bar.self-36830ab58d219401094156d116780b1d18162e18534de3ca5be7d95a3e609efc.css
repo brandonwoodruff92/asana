@@ -1,3 +1,4 @@
+/* line 1, /Users/appacademy/Desktop/asana/app/assets/stylesheets/closed_nav_bar.css.scss */
 .nav-bar {
   width: 100%;
   height: 56px;
@@ -9,6 +10,7 @@
   box-sizing: border-box;
 }
 
+/* line 12, /Users/appacademy/Desktop/asana/app/assets/stylesheets/closed_nav_bar.css.scss */
 .nav-bar-left, .nav-bar-right {
   width: 50%;
   height: inherit;
@@ -16,35 +18,38 @@
   align-items: center;
 }
 
+/* line 19, /Users/appacademy/Desktop/asana/app/assets/stylesheets/closed_nav_bar.css.scss */
 .nav-bar-left {
   justify-content: flex-start;
 }
 
+/* line 23, /Users/appacademy/Desktop/asana/app/assets/stylesheets/closed_nav_bar.css.scss */
 .nav-bar-right {
   justify-content: flex-end;
 }
 
+/* line 27, /Users/appacademy/Desktop/asana/app/assets/stylesheets/closed_nav_bar.css.scss */
 .nav-bar-item {
   display: flex;
 }
 
+/* line 31, /Users/appacademy/Desktop/asana/app/assets/stylesheets/closed_nav_bar.css.scss */
 .nav-tab-item {
   color: #646f79;
 }
 
-.nav-tabs {
-
-}
-
+/* line 39, /Users/appacademy/Desktop/asana/app/assets/stylesheets/closed_nav_bar.css.scss */
 .nav-tab-item {
   font-size: 15px;
   margin-right: 32px;
 }
 
+/* line 44, /Users/appacademy/Desktop/asana/app/assets/stylesheets/closed_nav_bar.css.scss */
 .nav-tab-item:hover {
   color: #635ac7;
 }
 
+/* line 48, /Users/appacademy/Desktop/asana/app/assets/stylesheets/closed_nav_bar.css.scss */
 #signup {
   padding: 0 16px;
   width: 147px;
@@ -61,15 +66,17 @@
   transition: background-color .15s,color .15s ease-in-out;
 }
 
+/* line 64, /Users/appacademy/Desktop/asana/app/assets/stylesheets/closed_nav_bar.css.scss */
 #signup:hover {
   background-color: #796eff;
   color: white;
 }
 
+/* line 69, /Users/appacademy/Desktop/asana/app/assets/stylesheets/closed_nav_bar.css.scss */
 #home-btn-logo {
   background-image: url("https://luna1.co/0fc2ef.png");
   background-repeat: no-repeat;
-  background-size:     contain;
+  background-size: contain;
   background-position: center center;
   height: 22px;
   width: 112px;

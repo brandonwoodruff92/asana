@@ -4,7 +4,7 @@ import AsanaStatement from "./asana_statement";
 
 const MarketingContent = (props) => {
   return (
-    <div>
+    <div className="marketing-content">
       <AsanaStatement />
     </div>
   );

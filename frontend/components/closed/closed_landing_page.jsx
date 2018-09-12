@@ -13,7 +13,7 @@ const ClosedLandingPage = (props) => {
       <header>
         <ClosedNavBar />
       </header>
-      <MarketingContent />
+      <MarketingContent className="marketing-content"/>
 
       <AuthRoute path={ RouteConstants.LOGIN } component={ LoginForm } />
       <AuthRoute path={ RouteConstants.SIGNUP } component={ SignupForm } />
