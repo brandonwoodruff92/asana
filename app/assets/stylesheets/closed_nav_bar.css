@@ -1,0 +1,22 @@
+.nav-bar {
+  width: 100%;
+  height: 56px;
+}
+
+.left-nav, .right-nav {
+  width: 50%;
+  height: inherit;
+  display: flex;
+}
+
+.left-nav {
+  justify-content: flex-start;
+}
+
+.right-nav {
+  justify-content: flex-end;
+}
+
+#home-btn-logo {
+  background-image: ("app/assets/images/logo.png");
+}
