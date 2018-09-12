@@ -1,13 +1,14 @@
 import React from "react";
-import { Redirect, Route } from "react-router-dom";
+import { connect } from "react-redux";
+import { Redirect, Route, withRouter } from "react-router-dom";
 import * as RouteConstants from "../constants/route_constants";
 
 const Auth = ({ component: Component, path, loggedIn, exact }) => {
   function toRender(props) {
     if (loggedIn) {
-      <Redirect to={RouteConstants.ROOT}/>
+      return <Redirect to={RouteConstants.OPEN_ROOT}/>
     } else {
-      <Component {...props} />
+      return <Component {...props} />
     }
   }
 
@@ -17,9 +18,9 @@ const Auth = ({ component: Component, path, loggedIn, exact }) => {
 const Protected = ({ component: Component, path, loggedIn, exact }) => {
   function toRender(props) {
     if (!loggedIn) {
-      <Redirect to={RouteConstants.LOGIN} />
+      return <Redirect to={RouteConstants.CLOSED_ROOT} />
     } else {
-      <Component {...props} />
+      return <Component {...props} />
     }
   }
 
