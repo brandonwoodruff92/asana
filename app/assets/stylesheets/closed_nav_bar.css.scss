@@ -1,0 +1,75 @@
+.nav-bar {
+  width: 100%;
+  height: 56px;
+  display: flex;
+  font-family: gordita, 'Helvetica Neue', Helvetica, sans-serif;
+  font-weight: 500;
+  padding-left: 16px;
+  padding-right: 16px;
+  box-sizing: border-box;
+}
+
+.nav-bar-left, .nav-bar-right {
+  width: 50%;
+  height: inherit;
+  display: flex;
+  align-items: center;
+}
+
+.nav-bar-left {
+  justify-content: flex-start;
+}
+
+.nav-bar-right {
+  justify-content: flex-end;
+}
+
+.nav-bar-item {
+  display: flex;
+}
+
+.nav-tab-item {
+  color: #646f79;
+}
+
+.nav-tabs {
+
+}
+
+.nav-tab-item {
+  font-size: 15px;
+  margin-right: 32px;
+}
+
+.nav-tab-item:hover {
+  color: #635ac7;
+}
+
+#signup {
+  padding: 0 16px;
+  width: 147px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #796eff;
+  border-radius: 3px;
+  color: #796eff;
+  font-family: gordita, 'Helvetica Neue', Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+#signup:hover {
+  background-color: #796eff;
+  color: white;
+}
+
+#home-btn-logo {
+  background-image: url("https://luna1.co/0fc2ef.png");
+  background-repeat: no-repeat;
+  background-size:     contain;
+  background-position: center center;
+  height: 22px;
+  width: 112px;
+}
