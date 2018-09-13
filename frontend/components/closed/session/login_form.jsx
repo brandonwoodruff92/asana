@@ -32,7 +32,7 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div>
-        <div className="session-modal-child" onClick={ (e) => e.stopPropogation() }>
+        <div className="session-modal-child">
           <div className="session-modal-container">
             <Link className="session-modal-exit" to={ RouteConstants.SPLASH_ROOT }>X</Link>
             <form className="session-form" onSubmit={ this.handleSubmit }>

@@ -10,7 +10,7 @@
 }
 
 .session-modal-child {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -110,10 +110,12 @@
 
 #signup-message, #login-message {
   color: #9ca6af;
-  font-size: 19px;
+  font-size: 17px;
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
 }
 
 #signup-link, #login-link {
   color: #796eff;
-  font-size: 19px;
+  font-size: 17px;
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
 }
