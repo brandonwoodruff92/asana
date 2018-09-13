@@ -7,6 +7,7 @@ import * as RouteConstants from "../constants/route_constants";
 import LandingPage from "./landing_page";
 import OpenLandingPage from "./open/open_landing_page";
 import ClosedLandingPage from "./closed/closed_landing_page";
+import Modal from "./modal";
 
 //App should route to two separate "containers" of pages:
 // - Closed: Marketing Landing page containing login/signup forms and marketing info
@@ -15,6 +16,7 @@ import ClosedLandingPage from "./closed/closed_landing_page";
 const App = (props) => {
   return (
     <div>
+      <Modal />
       <Route exact path="/" component={ LandingPage } />
       <AuthRoute path={ RouteConstants.SPLASH_ROOT } component={ ClosedLandingPage } />
       <ProtectedRoute path={ RouteConstants.APP_ROOT } component={ OpenLandingPage } />
