@@ -9,7 +9,7 @@ const MarketingContent = (props) => {
   return (
     <div className="marketing-content">
       <AsanaStatement />
-      <NavLink id="free-trial-button" to={ RouteConstants.SPLASH_ROOT }>
+      <NavLink id="free-trial-button" to={ RouteConstants.SIGNUP }>
         Start Free Trial
       </NavLink>
       <LandingPicture />

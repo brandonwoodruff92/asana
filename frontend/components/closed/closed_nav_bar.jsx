@@ -6,13 +6,16 @@ const ClosedNavBar = (props) => {
   return (
     <div className="nav-bar">
       <div className="nav-bar-left">
-        <NavLink id="home-btn-logo" to={ RouteConstants.SPLASH_ROOT }></NavLink>
+        <NavLink id="home-btn-logo"
+          to={ RouteConstants.SPLASH_ROOT }></NavLink>
       </div>
       <div className="nav-bar-right">
         <nav className="nav-bar-item nav-tabs">
-          <NavLink className="nav-tab-item" id="login" to={ RouteConstants.LOGIN }>Log In</NavLink>
+          <NavLink className="nav-tab-item"
+            id="login" to={ RouteConstants.LOGIN }>Log In</NavLink>
         </nav>
-        <NavLink id="signup" className="nav-bar-item" to={ RouteConstants.SIGNUP }>Start Free Trial</NavLink>
+        <NavLink id="signup" className="nav-bar-item"
+          to={ RouteConstants.SIGNUP }>Start Free Trial</NavLink>
       </div>
     </div>
   );
