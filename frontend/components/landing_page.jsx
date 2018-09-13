@@ -8,9 +8,9 @@ const LandingPage = (props) => {
   let destination;
 
   if (props.loggedIn) {
-    destination = RouteConstants.OPEN_ROOT;
+    destination = RouteConstants.APP_ROOT;
   } else {
-    destination = RouteConstants.CLOSED_ROOT;
+    destination = RouteConstants.SPLASH_ROOT;
   }
 
   return (
