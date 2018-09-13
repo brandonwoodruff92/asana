@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Redirect, withRouter } from "react-router-dom";
+import { Route, withRouter } from "react-router-dom";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import * as RouteConstants from "../constants/route_constants";
 
@@ -13,17 +13,9 @@ import ClosedLandingPage from "./closed/closed_landing_page";
 // - Open: App Landing page containing the actual Asana app components
 
 const App = (props) => {
-  let redirect;
-
-  if (props.loggedIn) {
-    redirect = <Redirect to={ RouteConstants.APP_ROOT } />;
-  } else {
-    redirect = <Redirect to= { RouteConstants.SPLASH_ROOT } />;
-  }
-
   return (
     <div>
-      { redirect }
+      <Route exact path="/" component={ LandingPage } />
       <AuthRoute path={ RouteConstants.SPLASH_ROOT } component={ ClosedLandingPage } />
       <ProtectedRoute path={ RouteConstants.APP_ROOT } component={ OpenLandingPage } />
     </div>

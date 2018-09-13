@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import * as RouteConstants from "../constants/route_constants";
 import { Redirect } from "react-router-dom";
 
+//Unused for now
 
 const LandingPage = (props) => {
   let destination;

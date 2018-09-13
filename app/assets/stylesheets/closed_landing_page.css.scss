@@ -1,0 +1,95 @@
+.asana-moto {
+  font-size: 45px;
+  font-weight: 400;
+  line-height: 55.98px;
+  font-family: gordita, 'Helvetica Neue', Helvetica, sans-serif;
+  margin-bottom: 32px;
+}
+
+.asana-statement {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 35.992px;
+  font-family: gordita, 'Helvetica Neue', Helvetica, sans-serif;
+  color: #646f79;
+}
+
+.marketing-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 90px;;
+}
+
+.statement-content {
+  text-align: center;
+  width: 905px;
+}
+
+#free-trial-button {
+  background-color: #796eff;
+  padding: 0 16px;
+  width: 173px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border: 2px solid #796eff;
+  border-radius: 3px;
+  color: white;
+  font-family: gordita, 'Helvetica Neue', Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+  box-sizing: border-box;
+  margin-top: 50px;
+  margin-bottom: 96px;
+  transition: background-color .15s,color .15s ease-in-out;
+}
+
+#free-trial-button:hover {
+  background-color: #635ac7;
+}
+
+.landing-picture-container {
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.feature-img-container {
+  width: 94%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.people-container {
+  width: 101%;
+  height: 45%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  position: absolute;
+  bottom: -60px;
+}
+
+#female-img, #male-img {
+  width: 17%;
+  height: 100%;
+}
+
+#feature-img {
+  position: relative;
+  width: 80%;
+  height: inherit;
+}
+
+#clipboard-background {
+  width:  99%;
+  height: 25%;
+  position: absolute;
+  top: 85px;
+  z-index: -1;
+}
