@@ -1,4 +1,4 @@
-export const OPEN_ROOT = "/open";
-export const CLOSED_ROOT = "/closed";
-export const LOGIN = "/closed/login";
-export const SIGNUP = "/closed/signup";
+export const APP_ROOT = "/app";
+export const SPLASH_ROOT = "/splash";
+export const LOGIN = "/splash/login";
+export const SIGNUP = "/splash/signup";

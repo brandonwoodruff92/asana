@@ -6,7 +6,7 @@ import * as RouteConstants from "../constants/route_constants";
 const Auth = ({ component: Component, path, loggedIn, exact }) => {
   function toRender(props) {
     if (loggedIn) {
-      return <Redirect to={RouteConstants.OPEN_ROOT}/>
+      return <Redirect to={RouteConstants.APP_ROOT}/>
     } else {
       return <Component {...props} />
     }
@@ -18,7 +18,7 @@ const Auth = ({ component: Component, path, loggedIn, exact }) => {
 const Protected = ({ component: Component, path, loggedIn, exact }) => {
   function toRender(props) {
     if (!loggedIn) {
-      return <Redirect to={RouteConstants.CLOSED_ROOT} />
+      return <Redirect to={RouteConstants.SPLASH_ROOT} />
     } else {
       return <Component {...props} />
     }
