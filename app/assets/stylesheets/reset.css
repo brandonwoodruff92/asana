@@ -44,3 +44,6 @@ table {
 a {
   text-decoration: none;
 }
+input {
+  style: none;
+}
