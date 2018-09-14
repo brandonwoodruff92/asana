@@ -6,6 +6,8 @@ import * as ErrorConstants from "../../../constants/error_constants";
 
 import { signup, clearSessionErrors } from "../../../actions/session_actions";
 
+// TODO: Add main errors bar at the top
+
 class SignupForm extends React.Component {
   constructor(props) {
     super(props);
