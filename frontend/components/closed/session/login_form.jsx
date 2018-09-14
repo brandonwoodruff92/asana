@@ -37,6 +37,9 @@ class LoginForm extends React.Component {
     } else {
       sessionErrors = (
         <div className="session-errors">
+          <div id="error-icon">
+            <p>!</p>
+          </div>
           <p>{ this.props.sessionErrors[0] }</p>
         </div>
       );
@@ -47,6 +50,7 @@ class LoginForm extends React.Component {
         <div className="session-modal-child">
           <div className="session-modal-container">
             <Link className="session-modal-exit" to={ RouteConstants.SPLASH_ROOT }>X</Link>
+            {sessionErrors}
             <form className="session-form" onSubmit={ this.handleSubmit }>
               <div className="form-content">
                 <h3 className="session-header">Log In</h3>
@@ -59,8 +63,6 @@ class LoginForm extends React.Component {
                     onChange={ this.update("email") }
                     placeholder="name@company.com" />
                 </label>
-
-                {sessionErrors}
 
                 <label className="session-label">
                   Password
