@@ -2,8 +2,9 @@ import React from "react";
 import { connect } from "react-redux";
 import { Link, withRouter } from "react-router-dom";
 import * as RouteConstants from "../../../constants/route_constants";
+import * as ErrorConstants from "../../../constants/error_constants";
 
-import { login } from "../../../actions/session_actions";
+import { login, clearSessionErrors } from "../../../actions/session_actions";
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -14,11 +15,19 @@ class LoginForm extends React.Component {
       isHidden: true
     };
 
+    this.errorBlocks = {
+      name: false,
+      email: false,
+      password: false
+    };
+
+    this.errors = this.props.sessionErrors;
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentWillReceiveProps(newProps) {
     if (newProps.sessionErrors.length > 0 && this.state.isHidden) {
+      this.errors = newProps.sessionErrors;
       this.setState({
         isHidden: false
       });
@@ -39,25 +48,63 @@ class LoginForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.login(this.state);
+    this.checkFields();
+    const user = { email: this.state.email, password: this.state.password };
+    this.props.login(user);
   }
 
   renderErrors() {
-    return (
-      <div className="session-errors">
-        <div className="arrow-up"></div>
-        <div id="exclamation"></div>
-        <p>{ this.props.sessionErrors[0] }</p>
+    const errors = (
+      <div className="errors-container">
+        <div id="login-email-errors"
+          className={ this.errorBlocks.email ? "session-errors open" : "session-errors hidden" }>
+          <div className="arrow-up"></div>
+          <div id="exclamation"></div>
+          <p>{ ErrorConstants.BLANK_FIELD }</p>
+        </div>
+
+        <div id="login-password-errors"
+          className={ this.errorBlocks.password ? "session-errors open" : "session-errors hidden" }>
+          <div className="arrow-up"></div>
+          <div id="exclamation"></div>
+          <p>{ ErrorConstants.BLANK_FIELD }</p>
+        </div>
       </div>
     );
+
+    this.errorBlocks = {
+      email: false,
+      password: false
+    };
+
+    return errors;
+  }
+
+  clearErrors() {
+
+  }
+
+  checkFields() {
+    if (this.state.email.replace(/\s+/g, '') === "") {
+      this.errorBlocks.email = true;
+    }
+
+    if (this.state.password.replace(/\s+/g, '') === "") {
+      this.errorBlocks.password = true;
+    }
   }
 
   render() {
+    if (this.props.sessionErrors.length > 0) {
+      clearTimeout(this.timeout);
+      this.timeout = setTimeout(this.props.clearSessionErrors, 5000);
+    }
+
     return (
       <div>
         <div className="session-modal-child">
           <div className="session-modal-container">
-            <Link className="session-modal-exit" to={ RouteConstants.SPLASH_ROOT }>X</Link>
+            <Link className="session-modal-exit" to={ RouteConstants.SPLASH_ROOT }>&#10005;</Link>
             { this.renderErrors() }
             <form className="session-form" onSubmit={ this.handleSubmit }>
               <div className="form-content">
@@ -83,7 +130,7 @@ class LoginForm extends React.Component {
 
                 <input className="session-submit" type="submit" value="Log In!" />
 
-                <p id="signup-message">Don't have an account?
+                <p id="signup-message">{"Don't have an account? "}
                   <Link id="signup-link" to={ RouteConstants.SIGNUP }> Sign up</Link>
                 </p>
               </div>
@@ -108,6 +155,9 @@ function mapDispatchToProps(dispatch) {
   return {
     login: (user) => {
       return dispatch(login(user));
+    },
+    clearSessionErrors: () => {
+      return dispatch(clearSessionErrors());
     }
   };
 }

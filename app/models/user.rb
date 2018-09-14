@@ -1,7 +1,9 @@
 class User < ApplicationRecord
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
+
   after_initialize :ensure_session_token
 
-  validates_with EmailValidator
+  validate :valid_email
 
   validates :name, :email, :password_digest, :session_token, presence: true
   validates :email, :session_token, uniqueness: true
@@ -39,5 +41,11 @@ class User < ApplicationRecord
 
   def self.generate_session_token
     SecureRandom::urlsafe_base64
+  end
+
+  def valid_email
+    unless VALID_EMAIL_REGEX.match?(@email)
+      self.errors.add(:email, "Please include an '@' in the email address. '#{@email}' is missing an '@'")
+    end
   end
 end

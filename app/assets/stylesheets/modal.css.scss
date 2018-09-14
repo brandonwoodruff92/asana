@@ -121,21 +121,64 @@
   font-family: 'Helvetica Neue', Helvetica, sans-serif;
 }
 
-.session-errors-open {
-  top: 235px;
-  visibility: visible;
+#signup-link:hover, #login-link:hover {
+  color: #635ac7;
+  border-bottom: 2px solid #635ac7;
+}
+
+.errors-container {
+  position: absolute;
+  top: 50%;
+}
+
+.open {
+  opacity: 1;
+}
+
+.errors-container .hidden {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .session-errors {
+  width: 189px;
   position: absolute;
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 1);
   padding: 15px;
   z-index: 12;
   display: flex;
-  transition: visibility 0.5s, position 0.5s linear;
-  visibility: hidden;
-  top: 176px;
+  transition: opacity 0.3s linear;
+  filter: drop-shadow(4px 4px 5px #a19e9e);
+}
+
+#signup-name-errors {
+  top: -62px;
+  left: -129px;
+}
+
+#signup-email-errors {
+  top: 32px;
+  left: -129px;
+}
+
+#signup-password-errors {
+  top: 126px;
+  left: -129px;
+}
+
+#login-email-errors {
+  top: -30px;
+  left: -129px;
+}
+
+#login-password-errors {
+  top: 79px;
+  left: -129px;
+}
+
+#login-errors {
+  top: 235px;
 }
 
 .session-errors p {

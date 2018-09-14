@@ -21,6 +21,12 @@ export const receiveErrors = (errors) => {
   };
 };
 
+export const clearSessionErrors = () => {
+  return {
+    type: ActionConstants.CLEAR_SESSION_ERRORS
+  };
+};
+
 export const login = (user) => {
   return (dispatch) => {
     return SessionApiUtil.login(user).then( (user) => {
