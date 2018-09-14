@@ -1,3 +1,5 @@
+
+
 export default class SessionApiUtil {
   static signup(user) {
     return $.ajax({

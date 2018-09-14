@@ -3,7 +3,7 @@ class EmailValidator < ActiveModel::Validator
 
   def validate(record)
     unless VALID_EMAIL_REGEX.match?(record.email)
-      record.errors.add(:invalid, "Please include an '@' in the email address. '#{record.email}' is missing an '@'")
+      record.errors.add("Please include an '@' in the email address. '#{record.email}' is missing an '@'")
     end
   end
 end

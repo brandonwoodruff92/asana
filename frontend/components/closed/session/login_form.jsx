@@ -30,6 +30,18 @@ class LoginForm extends React.Component {
   }
 
   render() {
+    let sessionErrors;
+
+    if (this.props.sessionErrors.length <= 0) {
+      sessionErrors = null;
+    } else {
+      sessionErrors = (
+        <div className="session-errors">
+          <p>{ this.props.sessionErrors[0] }</p>
+        </div>
+      );
+    }
+
     return (
       <div>
         <div className="session-modal-child">
@@ -47,6 +59,8 @@ class LoginForm extends React.Component {
                     onChange={ this.update("email") }
                     placeholder="name@company.com" />
                 </label>
+
+                {sessionErrors}
 
                 <label className="session-label">
                   Password
@@ -74,6 +88,12 @@ class LoginForm extends React.Component {
   }
 }
 
+function mapStateToProps(state) {
+  return {
+    sessionErrors: state.errors.session
+  };
+}
+
 function mapDispatchToProps(dispatch) {
   return {
     login: (user) => {
@@ -82,4 +102,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default withRouter(connect(null, mapDispatchToProps)(LoginForm));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(LoginForm));

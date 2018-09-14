@@ -84,6 +84,12 @@ class SignupForm extends React.Component {
   }
 }
 
+function mapStateToProps(state) {
+  return {
+    sessionErrors: state.errors.session
+  };
+}
+
 function mapDispatchToProps(dispatch) {
   return {
     signup: (user) => {
@@ -92,4 +98,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default withRouter(connect(null, mapDispatchToProps)(SignupForm));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SignupForm));
