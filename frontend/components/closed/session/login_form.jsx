@@ -10,10 +10,23 @@ class LoginForm extends React.Component {
     super(props);
     this.state = {
       email: "",
-      password: ""
+      password: "",
+      isHidden: true
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentWillReceiveProps(newProps) {
+    if (newProps.sessionErrors.length > 0 && this.state.isHidden) {
+      this.setState({
+        isHidden: false
+      });
+    } else if (newProps.sessionErrors.length <= 0 && !this.state.isHidden) {
+      this.setState({
+        isHidden: true
+      });
+    }
   }
 
   update(field) {
@@ -29,28 +42,23 @@ class LoginForm extends React.Component {
     this.props.login(this.state);
   }
 
+  renderErrors() {
+    return (
+      <div className="session-errors">
+        <div className="arrow-up"></div>
+        <div id="exclamation"></div>
+        <p>{ this.props.sessionErrors[0] }</p>
+      </div>
+    );
+  }
+
   render() {
-    let sessionErrors;
-
-    if (this.props.sessionErrors.length <= 0) {
-      sessionErrors = null;
-    } else {
-      sessionErrors = (
-        <div className="session-errors">
-          <div id="error-icon">
-            <p>!</p>
-          </div>
-          <p>{ this.props.sessionErrors[0] }</p>
-        </div>
-      );
-    }
-
     return (
       <div>
         <div className="session-modal-child">
           <div className="session-modal-container">
             <Link className="session-modal-exit" to={ RouteConstants.SPLASH_ROOT }>X</Link>
-            {sessionErrors}
+            { this.renderErrors() }
             <form className="session-form" onSubmit={ this.handleSubmit }>
               <div className="form-content">
                 <h3 className="session-header">Log In</h3>

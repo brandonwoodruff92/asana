@@ -121,20 +121,51 @@
   font-family: 'Helvetica Neue', Helvetica, sans-serif;
 }
 
+.session-errors-open {
+  top: 235px;
+  visibility: visible;
+}
+
 .session-errors {
   position: absolute;
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 1);
-  padding: 10px;
+  padding: 15px;
   z-index: 12;
   display: flex;
+  transition: visibility 0.5s, position 0.5s linear;
+  visibility: hidden;
+  top: 176px;
 }
 
-#error-icon {
-  background-color: #ffb837;
-  font-family: 'Baloo Tammudu', cursive;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  vertical-align: middle;
+.session-errors p {
+  margin-left: 25px;
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+#exclamation {
+  background-image: image_url("exclamation");
+  background-repeat: no-repeat;
+  height: 27px;
+  width: 27px;
+  position: absolute;
+  top: 13px;
+  left: 10px;
+}
+
+.arrow-up {
+  height: 15px;
+  width: 15px;
+  background-color: inherit;
+  z-index: 13;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  position: absolute;
+  top: -9px;
+  left: 12px;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
 }
