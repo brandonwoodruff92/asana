@@ -10,14 +10,17 @@ class Task < ApplicationRecord
   class_name: "UserTask"
 
   has_many :projects,
+  -> { distinct },
   through: :project_tasks,
   source: :project
 
   has_many :assignees,
+  -> { distinct },
   through: :user_tasks,
   source: :user
 
   has_many :sub_tasks,
+  -> { distinct },
   foreign_key: :parent_task_id,
   class_name: "Task"
 

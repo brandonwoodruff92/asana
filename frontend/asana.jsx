@@ -6,6 +6,8 @@ import configureStore from "./store/store";
 import Root from "./components/root";
 
 //TESTING IMPORTS//
+import { addUserToTask, removeUserFromTask } from "./actions/user_actions";
+import { fetchAllTasks } from "./actions/task_actions";
 //TESTING IMPORTS//
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -30,6 +32,9 @@ document.addEventListener("DOMContentLoaded", () => {
   //TESTING//
   window.dispatch = store.dispatch;
   window.getState = store.getState;
+  window.addUserToTask = addUserToTask;
+  window.removeUserFromTask = removeUserFromTask;
+  window.fetchAllTasks = fetchAllTasks;
   //TESTING//
 
   ReactDOM.render(<Root store={ store }/>, root);

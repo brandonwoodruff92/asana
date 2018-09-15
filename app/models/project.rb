@@ -14,14 +14,17 @@ class Project < ApplicationRecord
   class_name: "UserProject"
 
   has_many :tasks,
+  -> { distinct },
   through: :project_tasks,
   source: :task
 
   has_many :sections,
+  -> { distinct },
   through: :project_sections,
   source: :section
 
   has_many :assignees,
+  -> { distinct },
   through: :user_projects,
   source: :user
 

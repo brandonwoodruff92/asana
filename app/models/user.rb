@@ -22,14 +22,17 @@ class User < ApplicationRecord
   class_name: "UserTask"
 
   has_many :teams,
+  -> { distinct },
   through: :team_associations,
   source: :team
 
   has_many :projects,
+  -> { distinct },
   through: :user_projects,
   source: :project
 
   has_many :tasks,
+  -> { distinct },
   through: :user_tasks,
   source: :task
 

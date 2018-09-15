@@ -6,10 +6,12 @@ class Team < ApplicationRecord
   class_name: "TeamAssociation"
 
   has_many :members,
+  -> { distinct },
   through: :team_associations,
   source: :member
 
   has_many :projects,
+  -> { distinct },
   foreign_key: :team_id,
   class_name: "Project"
 
