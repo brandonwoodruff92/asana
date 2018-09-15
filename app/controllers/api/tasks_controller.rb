@@ -22,7 +22,6 @@ class Api::TasksController < ApplicationController
   end
 
   def index
-    debugger
     @tasks = current_user.tasks
   end
 
@@ -32,6 +31,7 @@ class Api::TasksController < ApplicationController
 
   def destroy
     @task = Task.find_by(id: params[:id])
+    render :show
   end
 
   private

@@ -22,6 +22,23 @@ class TaskApiUtil {
       }
     });
   }
+
+  static updateTask(task) {
+    return $.ajax({
+      method: "PATCH",
+      url: `api/tasks/${task}`,
+      data: {
+        task
+      }
+    });
+  }
+
+  static deleteTask(id) {
+    return $.ajax({
+      method: "DELETE",
+      url: `api/tasks/${id}`
+    });
+  }
 }
 
 export default TaskApiUtil;
