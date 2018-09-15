@@ -9,6 +9,14 @@ class User < ApplicationRecord
   validates :email, :session_token, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
+  has_many :team_associations,
+  foreign_key: :member_id,
+  class_name: "TeamAssociation"
+
+  has_many :teams,
+  through: :team_associations,
+  source: :team
+
   attr_reader :password
 
   def self.find_by_credentials(email, password)

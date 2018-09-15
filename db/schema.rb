@@ -10,10 +10,93 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180911155706) do
+ActiveRecord::Schema.define(version: 20180915193237) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "project_logs", force: :cascade do |t|
+    t.string "type", null: false
+    t.integer "type_id", null: false
+    t.integer "user_id", null: false
+    t.string "message", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["type_id", "user_id"], name: "index_project_logs_on_type_id_and_user_id"
+  end
+
+  create_table "project_tasks", force: :cascade do |t|
+    t.integer "project_id", null: false
+    t.integer "task_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id", "task_id"], name: "index_project_tasks_on_project_id_and_task_id"
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.integer "creator_id", null: false
+    t.string "name", null: false
+    t.string "description"
+    t.boolean "complete", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["creator_id"], name: "index_projects_on_creator_id"
+  end
+
+  create_table "sections", force: :cascade do |t|
+    t.integer "project_id", null: false
+    t.string "name", null: false
+    t.string "description"
+    t.datetime "due_date"
+    t.boolean "complete", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_sections_on_project_id"
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.integer "parent_task_id"
+    t.integer "section_id", null: false
+    t.string "name", null: false
+    t.string "description"
+    t.datetime "due_date"
+    t.boolean "complete", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["parent_task_id", "section_id"], name: "index_tasks_on_parent_task_id_and_section_id"
+  end
+
+  create_table "team_associations", force: :cascade do |t|
+    t.integer "member_id", null: false
+    t.integer "team_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["member_id", "team_id"], name: "index_team_associations_on_member_id_and_team_id"
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "description"
+    t.string "type", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_projects", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "project_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "project_id"], name: "index_user_projects_on_user_id_and_project_id"
+  end
+
+  create_table "user_tasks", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "task_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "task_id"], name: "index_user_tasks_on_user_id_and_task_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name", null: false
