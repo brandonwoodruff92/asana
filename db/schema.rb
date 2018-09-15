@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180915193237) do
+ActiveRecord::Schema.define(version: 20180915200720) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,14 @@ ActiveRecord::Schema.define(version: 20180915193237) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["type_id", "user_id"], name: "index_project_logs_on_type_id_and_user_id"
+  end
+
+  create_table "project_sections", force: :cascade do |t|
+    t.integer "project_id"
+    t.integer "section_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id", "section_id"], name: "index_project_sections_on_project_id_and_section_id"
   end
 
   create_table "project_tasks", force: :cascade do |t|
@@ -40,7 +48,9 @@ ActiveRecord::Schema.define(version: 20180915193237) do
     t.boolean "complete", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "team_id", null: false
     t.index ["creator_id"], name: "index_projects_on_creator_id"
+    t.index ["team_id"], name: "index_projects_on_team_id"
   end
 
   create_table "sections", force: :cascade do |t|
@@ -56,7 +66,7 @@ ActiveRecord::Schema.define(version: 20180915193237) do
 
   create_table "tasks", force: :cascade do |t|
     t.integer "parent_task_id"
-    t.integer "section_id", null: false
+    t.integer "section_id"
     t.string "name", null: false
     t.string "description"
     t.datetime "due_date"

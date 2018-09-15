@@ -13,9 +13,25 @@ class User < ApplicationRecord
   foreign_key: :member_id,
   class_name: "TeamAssociation"
 
+  has_many :user_projects,
+  foreign_key: :user_id,
+  class_name: "UserProject"
+
+  has_many :user_tasks,
+  foreign_key: :user_id,
+  class_name: "UserTask"
+
   has_many :teams,
   through: :team_associations,
   source: :team
+
+  has_many :projects,
+  through: :user_projects,
+  source: :project
+
+  has_many :tasks,
+  through: :user_tasks,
+  source: :task
 
   attr_reader :password
 
