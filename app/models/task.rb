@@ -20,7 +20,6 @@ class Task < ApplicationRecord
   source: :user
 
   has_many :sub_tasks,
-  -> { distinct },
   foreign_key: :parent_task_id,
   class_name: "Task"
 

@@ -11,7 +11,6 @@ class Team < ApplicationRecord
   source: :member
 
   has_many :projects,
-  -> { distinct },
   foreign_key: :team_id,
   class_name: "Project"
 
