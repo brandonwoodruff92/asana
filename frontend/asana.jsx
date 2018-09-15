@@ -6,7 +6,7 @@ import configureStore from "./store/store";
 import Root from "./components/root";
 
 //TESTING IMPORTS//
-import { login, logout } from "./actions/session_actions";
+import TaskApiUtil from "./util/task_api_util";
 //TESTING IMPORTS//
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -31,8 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //TESTING//
   window.dispatch = store.dispatch;
   window.getState = store.getState;
-  window.login = login;
-  window.logout = logout;
+  window.TaskApiUtil = TaskApiUtil;
   //TESTING//
 
   ReactDOM.render(<Root store={ store }/>, root);

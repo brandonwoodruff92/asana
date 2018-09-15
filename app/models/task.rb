@@ -23,5 +23,6 @@ class Task < ApplicationRecord
 
   belongs_to :section,
   foreign_key: :section_id,
+  optional: true,
   class_name: "Section"
 end

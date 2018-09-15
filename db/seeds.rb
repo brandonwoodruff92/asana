@@ -15,3 +15,10 @@ users = User.create!([
     password: "password"
   }
   ])
+
+tasks = Task.create!([
+  {
+    name: "Test Backend",
+    description: "This is a test for the backend"
+  }
+  ])

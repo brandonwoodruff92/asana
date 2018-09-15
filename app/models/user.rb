@@ -68,8 +68,8 @@ class User < ApplicationRecord
   end
 
   def valid_email
-    unless VALID_EMAIL_REGEX.match?(@email)
-      self.errors.add(:email, "Please include an '@' in the email address. '#{@email}' is missing an '@'")
+    unless VALID_EMAIL_REGEX.match?(self.email)
+      self.errors.add(:email, "Please include an '@' in the email address. '#{self.email}' is missing an '@'")
     end
   end
 end

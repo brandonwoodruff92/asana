@@ -22,6 +22,7 @@ class Api::TasksController < ApplicationController
   end
 
   def index
+    debugger
     @tasks = current_user.tasks
   end
 
