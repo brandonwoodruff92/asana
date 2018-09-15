@@ -22,6 +22,24 @@ class Api::UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def removeTask
+    @user = User.find_by(id: params[:userId])
+    @user.tasks.delete(Task.find_by(id: params[:taskId]))
+    render :show
+  end
+
+  def addTask
+    @user = User.find_by(id: params[:userId])
+    task = Task.find_by(id: params[:taskId])
+
+    if task
+      @user.tasks << task
+      render :show
+    else
+      render json: ["Task does not exist!"], status: 404
+    end
+  end
+
   private
 
   def user_params
