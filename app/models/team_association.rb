@@ -1,5 +1,5 @@
 class TeamAssociation < ApplicationRecord
-  validations :member_id, :team_id, presence: true
+  validates :member_id, :team_id, presence: true
 
   belongs_to :team,
   foreign_key: :team_id,
