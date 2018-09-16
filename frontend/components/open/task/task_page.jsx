@@ -1,9 +1,11 @@
 import React from "react";
 
+import TaskList from "./task_list";
+
 const TaskPage = () => {
   return (
     <div>
-      <p>Task Page</p>
+      <TaskList />
     </div>
   );
 };
