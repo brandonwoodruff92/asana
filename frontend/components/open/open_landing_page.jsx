@@ -3,11 +3,20 @@ import { connect } from "react-redux";
 
 import { logout } from "../../actions/session_actions";
 
+import AppSidebar from "./app_sidebar";
+import Index from "./index";
+
 const OpenLandingPage = (props) => {
   return (
     <div>
-      <h1>Open Landing Page</h1>
-      <button onClick={ props.logout }>Log Out</button>
+      <div className="app-header">
+        <h1>Open Landing Page</h1>
+        <button onClick={ props.logout }>Log Out</button>
+      </div>
+      <AppSidebar />
+      <div className="app-content">
+        <Index />
+      </div>
     </div>
   );
 };

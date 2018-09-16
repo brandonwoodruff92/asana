@@ -6,7 +6,7 @@ import * as RouteConstants from "../constants/route_constants";
 const Auth = ({ component: Component, path, loggedIn, exact }) => {
   function toRender(props) {
     if (loggedIn) {
-      return <Redirect to={RouteConstants.APP_ROOT}/>
+      return <Redirect to={RouteConstants.HOME}/>
     } else {
       return <Component {...props} />
     }
