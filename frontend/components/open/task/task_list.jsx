@@ -1,5 +1,4 @@
 import React from "react";
-import * as RouteConstants from "../../../constants/route_constants";
 
 import SectionItem from "./section_item";
 import TaskItem from "./task_item";
@@ -15,10 +14,14 @@ export default class TaskList extends React.Component {
     //add it to the list, and redirect to that task/section's
     //edit route.
 
-    return (e) => {
+    return () => {
       switch (type) {
         case "task":
-          return null;
+          this.props.createTask({});
+          break;
+        case "section":
+          this.props.createSection({});
+          break;
         default:
           return null;
       }
@@ -26,11 +29,11 @@ export default class TaskList extends React.Component {
   }
 
   render() {
-    //Query for all of the sections assigned to current user
-    //and create section items to render in a list.
-    //
-    //Render tasks that are assigned to current user but not
-    //linked to a section in a "blank" section.
+    const sections = this.props.sections.map( (section) => {
+      return (
+        <SectionItem section={ section } />
+      );
+    });
 
     return (
       <div>
@@ -39,8 +42,8 @@ export default class TaskList extends React.Component {
           <button onClick={ this.handleClick("section") }>Add Section</button>
         </div>
         <div className="task-list-container">
-          <ul className="task-list">
-            <p>Render Sections</p>
+          <ul className="sections-list">
+            { sections }
           </ul>
         </div>
       </div>

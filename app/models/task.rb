@@ -1,6 +1,4 @@
 class Task < ApplicationRecord
-  validates :name, presence: true
-
   has_many :project_tasks,
   foreign_key: :task_id,
   class_name: "ProjectTask"

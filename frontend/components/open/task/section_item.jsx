@@ -6,9 +6,17 @@ export default class SectionItem extends React.Component {
   }
 
   rener() {
+    const tasks = this.props.section.tasks.map( (task) => {
+      return (
+        <TaskItem task={ task } />
+      );
+    });
+
     return (
       <div>
-        <p>Section</p>
+        <ul>
+          { tasks }
+        </ul>
       </div>
     );
   }

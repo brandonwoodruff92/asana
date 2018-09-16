@@ -31,6 +31,11 @@ class User < ApplicationRecord
   through: :user_projects,
   source: :project
 
+  has_many :sections,
+  -> { distinct },
+  through: :projects,
+  source: :sections
+
   has_many :tasks,
   -> { distinct },
   through: :user_tasks,

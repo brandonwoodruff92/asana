@@ -22,6 +22,14 @@ export const removeTask = (taskId) => {
   };
 };
 
+export const mountTask = (taskId) => {
+  return {
+    type: ActionConstants.MOUNT_ENTITY,
+    entityType: "task",
+    entityId: taskId
+  };
+};
+
 export const fetchAllTasks = () => {
   return (dispatch) => {
     return TaskApiUtil.fetchAllTasks().then( (tasks) => {
@@ -41,7 +49,8 @@ export const fetchTask = (id) => {
 export const createTask = (task) => {
   return (dispatch) => {
     return TaskApiUtil.createTask(task).then( (task) => {
-      return dispatch(receiveTask(task));
+      dispatch(receiveTask(task));
+      dispatch(mountTask(task.id));
     });
   };
 };

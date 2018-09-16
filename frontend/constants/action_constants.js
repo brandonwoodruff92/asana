@@ -11,6 +11,12 @@ export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
 
 export const RECEIVE_USER = "RECEIVE_USER";
 
+///////////////////
+//Section Actions//
+///////////////////
+
+export const RECEIVE_SECTIONS = "RECEIVE_SECTIONS";
+
 ////////////////
 //Task Actions//
 ////////////////
@@ -18,6 +24,14 @@ export const RECEIVE_USER = "RECEIVE_USER";
 export const RECEIVE_TASKS = "RECEIVE_TASKS";
 export const RECEIVE_TASK = "RECEIVE_TASK";
 export const REMOVE_TASK = "REMOVE_TASK";
+
+/////////////////////
+//Task List Actions//
+/////////////////////
+
+export const MOUNT_ENTITY = "MOUNT_ENTITY";
+export const UNMOUNT_ENTITY = "UNMOUNT_ENTITY";
+
 
 /////////////////
 //Modal Actions//
