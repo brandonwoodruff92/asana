@@ -17,10 +17,6 @@ class User < ApplicationRecord
   foreign_key: :user_id,
   class_name: "UserProject"
 
-  has_many :user_tasks,
-  foreign_key: :user_id,
-  class_name: "UserTask"
-
   has_many :teams,
   -> { distinct },
   through: :team_associations,
@@ -32,9 +28,8 @@ class User < ApplicationRecord
   source: :project
 
   has_many :tasks,
-  -> { distinct },
-  through: :user_tasks,
-  source: :task
+  foreign_key: :assignee_id,
+  class_name: "Task"
 
   attr_reader :password
 

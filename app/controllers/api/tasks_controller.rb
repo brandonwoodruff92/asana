@@ -23,6 +23,8 @@ class Api::TasksController < ApplicationController
 
   def index
     @tasks = current_user.tasks
+    .where(parent_task_id: nil)
+    .where(complete: false)
   end
 
   def show
@@ -40,7 +42,6 @@ class Api::TasksController < ApplicationController
   def task_params
     params.require(:task).permit(
       :parent_task_id,
-      :section_id,
       :name,
       :description,
       :due_date,

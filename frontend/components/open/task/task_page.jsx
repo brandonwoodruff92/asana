@@ -1,14 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
 import * as RouteConstants from "../../../constants/route_constants";
-import { createTask, mountTask, unmountTask, fetchAllTasks } from "../../../actions/task_actions";
-import { withRouter } from "react-router-dom";
+import { createTask, updateTask, mountTask, unmountTask, fetchAllTasks, fetchTask } from "../../../actions/task_actions";
+import { Route, withRouter } from "react-router-dom";
 
 import TaskList from "./task_list";
 import TaskForm from "./task_form";
-
-// TODO: Figure out how to create task/section and mount to ui for rerouting
-// TODO: Are sections tasks?
 
 class TaskPage extends React.Component {
   constructor(props) {
@@ -16,32 +13,29 @@ class TaskPage extends React.Component {
   }
 
   componentDidMount() {
-    this.fetchAllTasks();
+    this.props.fetchAllTasks();
   }
 
   componentWillReceiveProps(newProps) {
     if (newProps.mountedTaskId && this.props.mountedTaskId !== newProps.mountedTaskId) {
       this.props.history.push(RouteConstants.TASKS + `${newProps.mountedTaskId}`);
-      this.props.unmountEntity();
     }
   }
 
   render() {
-    //Query for all of the sections assigned to current user
-    //and create section items to render in a list.
-    //
-    //Render tasks that are assigned to current user but not
-    //linked to a section in a "blank" section.
-
     return (
       <div>
         <TaskList
           tasks={ this.props.tasks }
           createTask={ this.props.createTask }
-          createSection={ this.props.createSection }/>
+          completeTask={ this.props.completeTask }
+          mountTask={ this.props.mountTask } />
         <Route
           path={ RouteConstants.TASKS_FORM }
-          render={ () => <TaskForm mountedTaskId={ this.props.mountedTaskId } />} />
+          render={ () => <TaskForm
+            task={ fetchTask(this.props.match.params.id) }
+            completeTask={ this.props.completeTask }
+            unmountTask={ this.props.unmountTask } /> } />
       </div>
     );
   }
@@ -59,11 +53,21 @@ function mapDispatchToProps(dispatch) {
     fetchAllTasks: () => {
       return dispatch(fetchAllTasks());
     },
+    fetchTask: (id) => {
+      return dispatch(fetchTask(id));
+    },
     createTask: (task) => {
       return dispatch(createTask(task));
     },
-    mountTask: (task) => {
-      return dispatch(mountTask(task));
+    updateTask: (task) => {
+      return dispatch(updateTask(task));
+    },
+    completeTask: (task) => {
+      task.complete = true;
+      return dispatch(updateTask(task));
+    },
+    mountTask: (taskId) => {
+      return dispatch(mountTask(taskId));
     },
     unmountTask: () => {
       return dispatch(unmountTask());

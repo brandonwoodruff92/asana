@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180917132431) do
+ActiveRecord::Schema.define(version: 20180917184320) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "orders", force: :cascade do |t|
+    t.integer "prev_id"
+    t.integer "next_id"
+    t.integer "orderable_id"
+    t.string "orderable_type"
+    t.index ["prev_id", "next_id", "orderable_id"], name: "index_orders_on_prev_id_and_next_id_and_orderable_id"
+  end
 
   create_table "project_logs", force: :cascade do |t|
     t.string "type", null: false
@@ -53,6 +61,10 @@ ActiveRecord::Schema.define(version: 20180917132431) do
     t.boolean "complete", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "assignee_id"
+    t.integer "section_id"
+    t.boolean "isSection"
+    t.index ["section_id"], name: "index_tasks_on_section_id"
   end
 
   create_table "team_associations", force: :cascade do |t|
@@ -77,14 +89,6 @@ ActiveRecord::Schema.define(version: 20180917132431) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id", "project_id"], name: "index_user_projects_on_user_id_and_project_id"
-  end
-
-  create_table "user_tasks", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "task_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id", "task_id"], name: "index_user_tasks_on_user_id_and_task_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -19,6 +19,7 @@ export default class TaskList extends React.Component {
           this.props.createTask({});
           break;
         case "section":
+        //Ignore for now...
           break;
         default:
           return null;
@@ -27,6 +28,16 @@ export default class TaskList extends React.Component {
   }
 
   render() {
+    const tasks = this.props.tasks.map( (task) => {
+      if (!task.complete) {
+        return (
+          <TaskItem
+            task={ task }
+            mountTask={ this.props.mountTask}
+            completeTask={ this.props.completeTask } />
+        );
+      }
+    });
 
     return (
       <div>
@@ -36,6 +47,7 @@ export default class TaskList extends React.Component {
         </div>
         <div className="task-list-container">
           <ul className="task-list">
+            { tasks }
           </ul>
         </div>
       </div>

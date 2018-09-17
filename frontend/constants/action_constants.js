@@ -11,6 +11,14 @@ export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
 
 export const RECEIVE_USER = "RECEIVE_USER";
 
+///////////////////
+//Project Actions//
+///////////////////
+
+export const RECEIVE_PROJECTS = "RECEIVE_PROJECTS";
+export const RECEIVE_PROJECT = "RECEIVE_PROJECT";
+export const REMOVE_PROJECT = "REMOVE_PROJECT";
+
 ////////////////
 //Task Actions//
 ////////////////

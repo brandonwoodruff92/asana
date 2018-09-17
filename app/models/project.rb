@@ -13,6 +13,10 @@ class Project < ApplicationRecord
   foreign_key: :project_id,
   class_name: "UserProject"
 
+  has_many :orders,
+  as: :orderable,
+  dependent: :destroy
+
   has_many :tasks,
   -> { distinct },
   through: :project_tasks,

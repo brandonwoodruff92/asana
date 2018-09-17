@@ -1,9 +1,11 @@
 import React from "react";
 
+import ProjectIndex from "./project_index";
+
 const HomePage = () => {
   return (
     <div>
-      <p>Home Page</p>
+      <ProjectIndex />
     </div>
   );
 };
