@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
+Team.destroy_all
+Project.destroy_all
 
 users = User.create!([
   {
@@ -16,9 +18,29 @@ users = User.create!([
   }
   ])
 
-tasks = Task.create!([
+team = Team.create!({
+  name: "Woodruff Industries",
+  description: "The best team",
+  team_type: "Marketing"
+  })
+
+projects = Project.create!([
   {
-    name: "Test Backend",
-    description: "This is a test for the backend"
+    creator_id: users[0].id,
+    name: "Test Project",
+    description: "This is a test project",
+    team_id: team.id
+  },
+  {
+    creator_id: users[0].id,
+    name: "Another Test Project",
+    description: "This is a another test project",
+    team_id: team.id
+  },
+  {
+    creator_id: users[0].id,
+    name: "One More Test Project",
+    description: "This is one more test project",
+    team_id: team.id
   }
   ])
