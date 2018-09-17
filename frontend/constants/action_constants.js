@@ -23,8 +23,8 @@ export const REMOVE_TASK = "REMOVE_TASK";
 //Task List Actions//
 /////////////////////
 
-export const MOUNT_ENTITY = "MOUNT_ENTITY";
-export const UNMOUNT_ENTITY = "UNMOUNT_ENTITY";
+export const MOUNT_TASK = "MOUNT_TASK";
+export const UNMOUNT_TASK = "UNMOUNT_TASK";
 
 
 /////////////////

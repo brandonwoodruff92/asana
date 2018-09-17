@@ -24,9 +24,14 @@ export const removeTask = (taskId) => {
 
 export const mountTask = (taskId) => {
   return {
-    type: ActionConstants.MOUNT_ENTITY,
-    entityType: "task",
-    entityId: taskId
+    type: ActionConstants.MOUNT_TASK,
+    taskId: taskId
+  };
+};
+
+export const unmountTask = () => {
+  return {
+    type: ActionConstants.UNMOUNT_TASK
   };
 };
 

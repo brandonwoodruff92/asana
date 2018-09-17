@@ -1,6 +1,5 @@
 import React from "react";
 
-import SectionItem from "./section_item";
 import TaskItem from "./task_item";
 
 export default class TaskList extends React.Component {
@@ -20,7 +19,6 @@ export default class TaskList extends React.Component {
           this.props.createTask({});
           break;
         case "section":
-          this.props.createSection({});
           break;
         default:
           return null;
@@ -29,11 +27,6 @@ export default class TaskList extends React.Component {
   }
 
   render() {
-    const sections = this.props.sections.map( (section) => {
-      return (
-        <SectionItem section={ section } />
-      );
-    });
 
     return (
       <div>
@@ -42,8 +35,7 @@ export default class TaskList extends React.Component {
           <button onClick={ this.handleClick("section") }>Add Section</button>
         </div>
         <div className="task-list-container">
-          <ul className="sections-list">
-            { sections }
+          <ul className="task-list">
           </ul>
         </div>
       </div>

@@ -1,9 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import * as RouteConstants from "../../../constants/route_constants";
-import * as ActionConstants from "../../../constants/action_constants";
-import { createTask, fetchAllTasks } from "../../../actions/task_actions";
-import { createSection, fetchAllSections } from "../../../actions/section_actions";
+import { createTask, mountTask, unmountTask, fetchAllTasks } from "../../../actions/task_actions";
 import { withRouter } from "react-router-dom";
 
 import TaskList from "./task_list";
@@ -18,18 +16,12 @@ class TaskPage extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchAllSections();
+    this.fetchAllTasks();
   }
 
   componentWillReceiveProps(newProps) {
-    if (newProps.mountedEntity) {
-      let path;
-      if (newProps.mountedEntity.type === "task")
-        path = RouteConstants.TASKS + `${newProps.mountedEntity.id}`;
-      else {
-        //Edit section?
-      }
-      this.props.history.push(RouteConstants.TASKS + `${newProps.mountedEntity.id}`);
+    if (newProps.mountedTaskId && this.props.mountedTaskId !== newProps.mountedTaskId) {
+      this.props.history.push(RouteConstants.TASKS + `${newProps.mountedTaskId}`);
       this.props.unmountEntity();
     }
   }
@@ -44,10 +36,12 @@ class TaskPage extends React.Component {
     return (
       <div>
         <TaskList
-          sections={ this.props.sections }
+          tasks={ this.props.tasks }
           createTask={ this.props.createTask }
           createSection={ this.props.createSection }/>
-        <Route to={ RouteConstants.TASKS_FORM } component={ TaskForm } />
+        <Route
+          path={ RouteConstants.TASKS_FORM }
+          render={ () => <TaskForm mountedTaskId={ this.props.mountedTaskId } />} />
       </div>
     );
   }
@@ -55,30 +49,24 @@ class TaskPage extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    sections: Object.values(state.entities.sections),
     tasks: Object.values(state.entities.tasks),
-    mountedEntity: state.ui.taskList.mountedEntity
+    mountedTaskId: state.ui.taskList.mountedTaskId
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
     fetchAllTasks: () => {
-      return dispatch(fetchAllTasks()); //Fetch specific tasks instead
-    },
-    fetchAllSections: () => {
-      return dispatch(fetchAllSections());
+      return dispatch(fetchAllTasks());
     },
     createTask: (task) => {
-      dispatch(createTask(task));
+      return dispatch(createTask(task));
     },
-    createSection: (section) => {
-      dispatch(createSection(section));
+    mountTask: (task) => {
+      return dispatch(mountTask(task));
     },
-    unmountEntity: () => {
-      return dispatch({
-        type: ActionConstants.UNMOUNT_ENTITY
-      });
+    unmountTask: () => {
+      return dispatch(unmountTask());
     }
   };
 }
