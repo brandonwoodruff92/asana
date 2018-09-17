@@ -9,14 +9,20 @@ export default class AppSidebar extends React.Component {
 
   render() {
     return (
-      <div>
-        <ul>
-          <li>
-            <Link to={ RouteConstants.HOME }>Home</Link>
-          </li>
-          <li>
-            <Link to={ RouteConstants.TASKS }>My Tasks</Link>
-          </li>
+      <div className="app-sidebar">
+        <div className="logo-container">
+        </div>
+        <ul className="sidebar-components-list">
+          <div className="sidebar-section">
+            <ul className="nav-list">
+              <li className="sidebar-nav-link">
+                <Link to={ RouteConstants.HOME }>Home</Link>
+              </li>
+              <li className="sidebar-nav-link">
+                <Link to={ RouteConstants.TASKS }>My Tasks</Link>
+              </li>
+            </ul>
+          </div>
         </ul>
       </div>
     );

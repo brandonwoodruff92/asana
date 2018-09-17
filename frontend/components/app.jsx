@@ -15,7 +15,7 @@ import Modal from "./modal";
 
 const App = (props) => {
   return (
-    <div>
+    <div className="app-container">
       <Modal />
       <Route exact path="/" component={ LandingPage } />
       <AuthRoute path={ RouteConstants.SPLASH_ROOT } component={ ClosedLandingPage } />

@@ -8,14 +8,16 @@ import Index from "./index";
 
 const OpenLandingPage = (props) => {
   return (
-    <div>
-      <div className="app-header">
-        <h1>Open Landing Page</h1>
-        <button onClick={ props.logout }>Log Out</button>
-      </div>
+    <div className="open-landing-page">
       <AppSidebar />
-      <div className="app-content">
-        <Index />
+      <div className="content-container">
+        <div className="app-header">
+          <h1>Open Landing Page</h1>
+          <button onClick={ props.logout }>Log Out</button>
+        </div>
+        <div className="app-content">
+          <Index />
+        </div>
       </div>
     </div>
   );
