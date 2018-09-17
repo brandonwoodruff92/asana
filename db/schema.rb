@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180917201624) do
+ActiveRecord::Schema.define(version: 20180917205530) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,14 +67,6 @@ ActiveRecord::Schema.define(version: 20180917201624) do
     t.index ["section_id"], name: "index_tasks_on_section_id"
   end
 
-  create_table "team_associations", force: :cascade do |t|
-    t.integer "member_id", null: false
-    t.integer "team_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["member_id", "team_id"], name: "index_team_associations_on_member_id_and_team_id"
-  end
-
   create_table "teams", force: :cascade do |t|
     t.string "name", null: false
     t.string "description"
@@ -99,6 +91,7 @@ ActiveRecord::Schema.define(version: 20180917201624) do
     t.string "session_token", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "team_id", null: false
     t.index ["email", "session_token"], name: "index_users_on_email_and_session_token"
   end
 

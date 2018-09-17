@@ -1,5 +1,7 @@
 import React from "react";
 
+import ProjectItem from "./project_item";
+
 export default class ProjectList extends React.Component {
   constructor(props) {
     super(props);
@@ -11,7 +13,9 @@ export default class ProjectList extends React.Component {
 
   render() {
     const projects = this.props.projects.map( (project) => {
-      return <ProjectItem project={ project } />;
+      return <ProjectItem
+        key={ project.id }
+        project={ project } />;
     });
 
     return (

@@ -8,10 +8,25 @@ export const receiveProjects = (projects) => {
   };
 };
 
+export const receiveProject = (project) => {
+  return {
+    type: ActionConstants.RECEIVE_PROJECT,
+    project
+  };
+};
+
 export const fetchAllProjects = () => {
   return (dispatch) => {
     return ProjectApiUtil.fetchAllProjects().then( (projects) => {
       return dispatch(receiveProjects(projects));
+    });
+  };
+};
+
+export const createProject = (project) => {
+  return (dispatch) => {
+    return ProjectApiUtil.createProject(project).then( (project) => {
+      return dispatch(receiveProject(project));
     });
   };
 };

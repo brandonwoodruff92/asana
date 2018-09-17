@@ -5,4 +5,14 @@ export default class ProjectApiUtil {
       url: "api/projects"
     });
   }
+
+  static createProject(project) {
+    return $.ajax({
+      method: "POST",
+      url: "api/projects",
+      data: {
+        project
+      }
+    });
+  }
 }

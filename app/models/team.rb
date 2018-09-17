@@ -6,9 +6,8 @@ class Team < ApplicationRecord
   class_name: "TeamAssociation"
 
   has_many :members,
-  -> { distinct },
-  through: :team_associations,
-  source: :member
+  foreign_key: :team_id,
+  class_name: "User"
 
   has_many :projects,
   foreign_key: :team_id,

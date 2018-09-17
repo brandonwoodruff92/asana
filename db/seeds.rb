@@ -8,15 +8,6 @@
 
 User.destroy_all
 Team.destroy_all
-Project.destroy_all
-
-users = User.create!([
-  {
-    name: "Brandon Woodruff",
-    email: "brandonwoodruff92@gmail.com",
-    password: "password"
-  }
-  ])
 
 team = Team.create!({
   name: "Woodruff Industries",
@@ -24,23 +15,9 @@ team = Team.create!({
   team_type: "Marketing"
   })
 
-projects = Project.create!([
-  {
-    creator_id: users[0].id,
-    name: "Test Project",
-    description: "This is a test project",
-    team_id: team.id
-  },
-  {
-    creator_id: users[0].id,
-    name: "Another Test Project",
-    description: "This is a another test project",
-    team_id: team.id
-  },
-  {
-    creator_id: users[0].id,
-    name: "One More Test Project",
-    description: "This is one more test project",
-    team_id: team.id
-  }
-  ])
+user = User.create!({
+  name: "Brandon Woodruff",
+  email: "brandonwoodruff92@gmail.com",
+  password: "password",
+  team_id: team.id
+  })

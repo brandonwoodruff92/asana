@@ -17,10 +17,9 @@ class User < ApplicationRecord
   foreign_key: :user_id,
   class_name: "UserProject"
 
-  has_many :teams,
-  -> { distinct },
-  through: :team_associations,
-  source: :team
+  belongs_to :team,
+  foreign_key: :team_id,
+  class_name: "Team"
 
   has_many :projects,
   -> { distinct },
