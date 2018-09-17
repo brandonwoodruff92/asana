@@ -20,9 +20,4 @@ class Task < ApplicationRecord
   has_many :sub_tasks,
   foreign_key: :parent_task_id,
   class_name: "Task"
-
-  belongs_to :section,
-  foreign_key: :section_id,
-  optional: true,
-  class_name: "Section"
 end

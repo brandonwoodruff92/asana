@@ -18,11 +18,6 @@ class Project < ApplicationRecord
   through: :project_tasks,
   source: :task
 
-  has_many :sections,
-  -> { distinct },
-  through: :project_sections,
-  source: :section
-
   has_many :assignees,
   -> { distinct },
   through: :user_projects,

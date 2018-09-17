@@ -19,7 +19,7 @@ const LandingPage = (props) => {
   );
 };
 
-function mapStateToProps(state, oldProps) {
+function mapStateToProps(state) {
   return {
     loggedIn: Boolean(state.session.id)
   };

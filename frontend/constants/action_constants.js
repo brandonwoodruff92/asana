@@ -11,12 +11,6 @@ export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
 
 export const RECEIVE_USER = "RECEIVE_USER";
 
-///////////////////
-//Section Actions//
-///////////////////
-
-export const RECEIVE_SECTIONS = "RECEIVE_SECTIONS";
-
 ////////////////
 //Task Actions//
 ////////////////
