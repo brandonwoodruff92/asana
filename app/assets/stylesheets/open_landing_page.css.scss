@@ -22,6 +22,11 @@
   align-items: center;
 }
 
+.left-header {
+  display: flex;
+  justify-content: space-around;
+}
+
 #app-location {
   color: #151b26;
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;

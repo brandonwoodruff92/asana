@@ -1,7 +1,10 @@
 import React from "react";
 import * as ModalConstants from "../../../constants/modal_constants";
 
-class TeamOptions {
+class TeamOptions extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
   render() {
     return (

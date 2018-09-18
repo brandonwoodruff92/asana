@@ -32,6 +32,7 @@ export const REMOVE_TASK = "REMOVE_TASK";
 /////////////////////////////
 
 export const SET_SELECTED_LINK = "SET_SELECTED_LINK";
+export const TOGGLE_SIDEBAR = "TOGGLE_SIDEBAR";
 
 /////////////////////
 //Task List Actions//

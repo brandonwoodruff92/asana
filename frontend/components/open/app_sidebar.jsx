@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import * as RouteConstants from "../../constants/route_constants";
+import SvgUtil from "../../util/svg_util";
 
 import TeamOptions from "./sidebar_items/team_options";
 import Favorites from "./sidebar_items/favorites";
@@ -61,9 +62,7 @@ export default class AppSidebar extends React.Component {
           <img
             id="logo-img"
             src="https://d3ki9tyy5l5ruj.cloudfront.net/obj/3ac85a538c3fc5bb08d0206ede04ae8aa13c20b2/inapp__logo_color_ondark_horizontal.svg" />
-          <img
-            id="menu-button"
-            src="/assets/menu.svg" />
+          { SvgUtil.renderMenuButton("close-menu", this.props.toggleSidebar) }
         </div>
         <ul className="sidebar-components-list">
           <div className="sidebar-section-nav">
@@ -93,13 +92,11 @@ export default class AppSidebar extends React.Component {
             </ul>
           </div>
           <div className="sidebar-section nav-dropdown">
-            <div className="favorites-label-container">
+            <div
+              className="favorites-label-container"
+              onClick={ this.toggleFavorites }>
               <p id="nav-dropdown-favorites">Favorites</p>
-              <p
-                id="dropdown-icon"
-                onClick={ this.toggleFavorites }>
-                &or;
-              </p>
+              { SvgUtil.renderCaret(this.state.favorites) }
             </div>
             { this.renderFavorites() }
           </div>

@@ -1,0 +1,264 @@
+/* line 1, /Users/appacademy/Desktop/asana/app/assets/stylesheets/app_sidebar.css.scss */
+.app-sidebar {
+  min-width: 244px;
+  width: 244px;
+  height: 100vh;
+  background-color: #151b26;
+  position: relative;
+}
+
+/* line 10, /Users/appacademy/Desktop/asana/app/assets/stylesheets/app_sidebar.css.scss */
+.app-sidebar:hover #caret {
+  visibility: visible;
+}
+
+/* line 15, /Users/appacademy/Desktop/asana/app/assets/stylesheets/app_sidebar.css.scss */
+.invite-section {
+  position: absolute;
+  width: 100%;
+  height: 140px;
+  bottom: 0;
+}
+
+/* line 22, /Users/appacademy/Desktop/asana/app/assets/stylesheets/app_sidebar.css.scss */
+#invite-img {
+  width: 100px;
+  height: 34px;
+  margin: 0 72px;
+}
+
+/* line 28, /Users/appacademy/Desktop/asana/app/assets/stylesheets/app_sidebar.css.scss */
+#invite-text {
+  padding: 15px 30px;
+  text-align: center;
+  color: white;
+  font-size: 11px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  line-height: normal;
+}
+
+/* line 37, /Users/appacademy/Desktop/asana/app/assets/stylesheets/app_sidebar.css.scss */
+.logo-container {
+  padding-left: 15px;
+  padding-right: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* line 45, /Users/appacademy/Desktop/asana/app/assets/stylesheets/app_sidebar.css.scss */
+#logo-img {
+  height: 16px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* line 51, /Users/appacademy/Desktop/asana/app/assets/stylesheets/app_sidebar.css.scss */
+#menu-button {
+  height: 16px;
+  width: 45px;
+  padding: 5px 0;
+}
+
+/* line 57, /Users/appacademy/Desktop/asana/app/assets/stylesheets/app_sidebar.css.scss */
+#menu-button:hover {
+  content: url("/assets/menu-white.svg");
+  cursor: pointer;
+}
+
+/* line 62, /Users/appacademy/Desktop/asana/app/assets/stylesheets/app_sidebar.css.scss */
+.sidebar-section, .sidebar-section-nav {
+  border-bottom: 1px solid #222b37;
+  min-height: 26px;
+}
+
+/* line 67, /Users/appacademy/Desktop/asana/app/assets/stylesheets/app_sidebar.css.scss */
+.sidebar-section-nav {
+  padding-bottom: 10px;
+}
+
+/* line 71, /Users/appacademy/Desktop/asana/app/assets/stylesheets/app_sidebar.css.scss */
+.sidebar-section {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+/* line 78, /Users/appacademy/Desktop/asana/app/assets/stylesheets/app_sidebar.css.scss */
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* line 84, /Users/appacademy/Desktop/asana/app/assets/stylesheets/app_sidebar.css.scss */
+.team-section {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+/* line 92, /Users/appacademy/Desktop/asana/app/assets/stylesheets/app_sidebar.css.scss */
+#plus-button {
+  color: #8a8d93;
+  padding: 5px;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+/* line 100, /Users/appacademy/Desktop/asana/app/assets/stylesheets/app_sidebar.css.scss */
+#plus-button:hover {
+  color: white;
+}
+
+/* line 104, /Users/appacademy/Desktop/asana/app/assets/stylesheets/app_sidebar.css.scss */
+.sidebar-nav-link {
+  color: #d5dce0;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 28px;
+  padding-left: 15px;
+  padding-right: 10px;
+  width: 100%;
+}
+
+/* line 115, /Users/appacademy/Desktop/asana/app/assets/stylesheets/app_sidebar.css.scss */
+.sidebar-nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+}
+
+/* line 120, /Users/appacademy/Desktop/asana/app/assets/stylesheets/app_sidebar.css.scss */
+.sidebar-nav-link.selected {
+  background-color: rgba(255, 255, 255, 0.16);
+}
+
+/* line 124, /Users/appacademy/Desktop/asana/app/assets/stylesheets/app_sidebar.css.scss */
+.sidebar-nav-link.selected:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* line 128, /Users/appacademy/Desktop/asana/app/assets/stylesheets/app_sidebar.css.scss */
+.nav-dropdown {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 11px;
+  flex-direction: column;
+}
+
+/* line 136, /Users/appacademy/Desktop/asana/app/assets/stylesheets/app_sidebar.css.scss */
+.favorites-label-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* line 143, /Users/appacademy/Desktop/asana/app/assets/stylesheets/app_sidebar.css.scss */
+.favorites-label-container:hover {
+  cursor: pointer;
+}
+/* line 144, /Users/appacademy/Desktop/asana/app/assets/stylesheets/app_sidebar.css.scss */
+.favorites-label-container:hover #nav-dropdown-favorites {
+  color: #9ca6af;
+}
+/* line 148, /Users/appacademy/Desktop/asana/app/assets/stylesheets/app_sidebar.css.scss */
+.favorites-label-container:hover #caret {
+  color: white;
+}
+
+/* line 155, /Users/appacademy/Desktop/asana/app/assets/stylesheets/app_sidebar.css.scss */
+.favorites-label-container > p {
+  color: #646f79;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  padding-left: 15px;
+  padding-right: 10px;
+}
+
+/* line 164, /Users/appacademy/Desktop/asana/app/assets/stylesheets/app_sidebar.css.scss */
+#home-img, #tasks-img {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+}
+
+/* line 170, /Users/appacademy/Desktop/asana/app/assets/stylesheets/app_sidebar.css.scss */
+#home-link, #tasks-link {
+  display: flex;
+  align-items: center;
+}
+
+/* line 175, /Users/appacademy/Desktop/asana/app/assets/stylesheets/app_sidebar.css.scss */
+.team-options {
+  position: absolute;
+  z-index: 11;
+  width: 217px;
+  background-color: white;
+  box-sizing: border-box;
+  right: -187px;
+  top: 33px;
+  border: 1px solid #d5dce0;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 10px 15px 0px;
+  padding: 5px 0;
+}
+
+/* line 189, /Users/appacademy/Desktop/asana/app/assets/stylesheets/app_sidebar.css.scss */
+.team-option {
+  padding: 10px;
+  font-size: 13px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+/* line 195, /Users/appacademy/Desktop/asana/app/assets/stylesheets/app_sidebar.css.scss */
+.team-option:hover {
+  background-color: #14aaf5;
+  color: white;
+  cursor: pointer;
+}
+
+/* line 201, /Users/appacademy/Desktop/asana/app/assets/stylesheets/app_sidebar.css.scss */
+.favorites {
+  width: 100%;
+}
+
+/* line 205, /Users/appacademy/Desktop/asana/app/assets/stylesheets/app_sidebar.css.scss */
+.favorites-content {
+  padding-top: 5px;
+  padding-left: 15px;
+  padding-right: 10px;
+}
+
+/* line 211, /Users/appacademy/Desktop/asana/app/assets/stylesheets/app_sidebar.css.scss */
+.empty-text {
+  position: relative;
+}
+
+/* line 215, /Users/appacademy/Desktop/asana/app/assets/stylesheets/app_sidebar.css.scss */
+#star {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  fill: white;
+  line-height: 17px;
+  top: 3px;
+  right: 26px;
+}
+
+/* line 225, /Users/appacademy/Desktop/asana/app/assets/stylesheets/app_sidebar.css.scss */
+#caret {
+  fill: #646f79;
+  width: 22px;
+  height: 22px;
+  padding: 5px;
+  visibility: hidden;
+  transform: rotate(180deg);
+}

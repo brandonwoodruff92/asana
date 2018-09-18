@@ -1,0 +1,107 @@
+/* line 1, /Users/appacademy/Desktop/asana/app/assets/stylesheets/closed_landing_page.css.scss */
+.asana-moto {
+  font-size: 45px;
+  font-weight: 400;
+  line-height: 55.98px;
+  font-family: gordita, 'Helvetica Neue', Helvetica, sans-serif;
+  margin-bottom: 32px;
+}
+
+/* line 9, /Users/appacademy/Desktop/asana/app/assets/stylesheets/closed_landing_page.css.scss */
+.asana-statement {
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 35.992px;
+  font-family: gordita, 'Helvetica Neue', Helvetica, sans-serif;
+  color: #646f79;
+}
+
+/* line 17, /Users/appacademy/Desktop/asana/app/assets/stylesheets/closed_landing_page.css.scss */
+.marketing-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 90px;
+}
+
+/* line 24, /Users/appacademy/Desktop/asana/app/assets/stylesheets/closed_landing_page.css.scss */
+.statement-content {
+  text-align: center;
+  width: 905px;
+}
+
+/* line 29, /Users/appacademy/Desktop/asana/app/assets/stylesheets/closed_landing_page.css.scss */
+#free-trial-button {
+  background-color: #796eff;
+  padding: 0 16px;
+  width: 173px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border: 2px solid #796eff;
+  border-radius: 3px;
+  color: white;
+  font-family: gordita, 'Helvetica Neue', Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+  box-sizing: border-box;
+  margin-top: 50px;
+  margin-bottom: 96px;
+  transition: background-color .15s,color .15s ease-in-out;
+}
+
+/* line 48, /Users/appacademy/Desktop/asana/app/assets/stylesheets/closed_landing_page.css.scss */
+#free-trial-button:hover {
+  background-color: #635ac7;
+}
+
+/* line 52, /Users/appacademy/Desktop/asana/app/assets/stylesheets/closed_landing_page.css.scss */
+.landing-picture-container {
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* line 60, /Users/appacademy/Desktop/asana/app/assets/stylesheets/closed_landing_page.css.scss */
+.feature-img-container {
+  width: 94%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+/* line 68, /Users/appacademy/Desktop/asana/app/assets/stylesheets/closed_landing_page.css.scss */
+.people-container {
+  width: 101%;
+  height: 45%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  position: absolute;
+  bottom: -60px;
+}
+
+/* line 78, /Users/appacademy/Desktop/asana/app/assets/stylesheets/closed_landing_page.css.scss */
+#female-img, #male-img {
+  width: 17%;
+  height: 100%;
+}
+
+/* line 83, /Users/appacademy/Desktop/asana/app/assets/stylesheets/closed_landing_page.css.scss */
+#feature-img {
+  position: relative;
+  width: 80%;
+  height: inherit;
+}
+
+/* line 89, /Users/appacademy/Desktop/asana/app/assets/stylesheets/closed_landing_page.css.scss */
+#clipboard-background {
+  width: 99%;
+  height: 25%;
+  position: absolute;
+  top: 85px;
+  z-index: -1;
+}
