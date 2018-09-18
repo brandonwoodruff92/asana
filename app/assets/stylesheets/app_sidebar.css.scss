@@ -130,6 +130,7 @@
   justify-content: space-between;
   align-items: center;
   padding-right: 11px;
+  flex-direction: column;
 }
 
 .nav-dropdown:hover {
@@ -149,7 +150,14 @@
   visibility: hidden;
 }
 
-.sidebar-section > p {
+.favorites-label-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.favorites-label-container > p {
   color: rgb(100, 111, 121);
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 13px;
@@ -196,5 +204,5 @@
 }
 
 .favorites {
-  
+
 }

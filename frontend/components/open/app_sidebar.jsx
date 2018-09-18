@@ -25,12 +25,10 @@ export default class AppSidebar extends React.Component {
   }
 
   toggleFavorites(e) {
-    debugger
     e.stopPropagation();
     this.setState({
       favorites: this.state.favorites ? false : true
     });
-    debugger
   }
 
   renderFavorites() {
@@ -95,12 +93,14 @@ export default class AppSidebar extends React.Component {
             </ul>
           </div>
           <div className="sidebar-section nav-dropdown">
-            <p id="nav-dropdown-favorites">Favorites</p>
-            <p
-              id="dropdown-icon"
-              onClick={ this.toggleFavorites }>
-              &or;
-            </p>
+            <div className="favorites-label-container">
+              <p id="nav-dropdown-favorites">Favorites</p>
+              <p
+                id="dropdown-icon"
+                onClick={ this.toggleFavorites }>
+                &or;
+              </p>
+            </div>
             { this.renderFavorites() }
           </div>
           <div className="sidebar-section">
