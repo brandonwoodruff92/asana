@@ -1,26 +1,200 @@
 .app-sidebar {
+  min-width: 244px;
   width: 244px;
   height: 100vh;
   background-color: #151b26;
+  position: relative;
+}
+
+.app-sidebar:hover {
+  #dropdown-icon {
+    visibility: visible;
+  }
+}
+
+.invite-section {
+  position: absolute;
+  width: 100%;
+  height: 140px;
+  bottom: 0;
+}
+
+#invite-img {
+  width: 100px;
+  height: 34px;
+  margin: 0 72px;
+}
+
+#invite-text {
+  padding: 15px 30px;
+  text-align: center;
+  color: white;
+  font-size: 11px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  line-height: normal;
+}
+
+.logo-container {
+  padding-left: 15px;
+  padding-right: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#logo-img {
+  height: 16px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#menu-button {
+  height: 16px;
+  width: 45px;
+  padding: 5px 0;
+}
+
+#menu-button:hover {
+  content:url("/assets/menu-white.svg");
+  cursor: pointer;
+}
+
+.sidebar-section, .sidebar-section-nav {
+  border-bottom: 1px solid #222b37;
+  min-height: 26px;
+}
+
+.sidebar-section-nav {
+  padding-bottom: 10px;
 }
 
 .sidebar-section {
-  border-bottom: 1px solid #222b37;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.team-section {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+#plus-button {
+  color: #8a8d93;
+  padding: 5px;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+#plus-button:hover {
+  color: white;
 }
 
 .sidebar-nav-link {
-  padding-left: 15px;
-  padding-right: 10px;
-}
-
-.sidebar-nav-link a {
   color: #d5dce0;
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 28px;
+  padding-left: 15px;
+  padding-right: 10px;
+  width: 100%;
 }
 
 .sidebar-nav-link:hover {
   background-color: rgba(255,255,255,0.08);
+  cursor: pointer;
+}
+
+.sidebar-nav-link.selected {
+  background-color: rgba(255,255,255,0.16);
+}
+
+.sidebar-nav-link.selected:hover {
+  background-color: rgba(255,255,255,0.2)
+}
+
+.nav-dropdown {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 11px;
+}
+
+.nav-dropdown:hover {
+  #nav-dropdown-favorites {
+    color: #9ca6af;
+  }
+
+  #dropdown-icon {
+    color: white;
+  }
+
+  cursor: pointer;
+}
+
+#dropdown-icon {
+  padding: 5px;
+  visibility: hidden;
+}
+
+.sidebar-section > p {
+  color: rgb(100, 111, 121);
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  padding-left: 15px;
+  padding-right: 10px;
+}
+
+#home-img, #tasks-img {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+}
+
+#home-link, #tasks-link {
+  display: flex;
+  align-items: center;
+}
+
+.team-options {
+  position: absolute;
+  z-index: 11;
+  width: 217px;
+  background-color: white;
+  box-sizing: border-box;
+  right: -187px;
+  top: 33px;
+  border: 1px solid rgb(213, 220, 224);
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 10px 15px 0px;
+  padding: 5px 0;
+}
+
+.team-option {
+  padding: 10px;
+  font-size: 13px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.team-option:hover {
+  background-color: #14aaf5;
+  color: white;
+  cursor: pointer;
+}
+
+.favorites {
+  
 }

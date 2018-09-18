@@ -3,8 +3,7 @@ import { closeModal } from "../actions/modal_actions";
 import { connect } from "react-redux";
 import * as ModalConstants from "../constants/modal_constants";
 
-import LoginForm from "./closed/session/login_form";
-import SignupForm from "./closed/session/signup_form";
+import ProjectForm from "./open/project/project_form";
 
 const Modal = ({ modal, closeModal }) => {
   if (!modal) {
@@ -14,11 +13,8 @@ const Modal = ({ modal, closeModal }) => {
   let component;
 
   switch (modal) {
-    case ModalConstants.LOGIN:
-      component = <LoginForm />;
-      break;
-    case ModalConstants.SIGNUP:
-      component = <SignupForm />;
+    case ModalConstants.PROJECT_FORM:
+      component = <ProjectForm />;
       break;
     default:
       return null;

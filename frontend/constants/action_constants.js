@@ -27,13 +27,18 @@ export const RECEIVE_TASKS = "RECEIVE_TASKS";
 export const RECEIVE_TASK = "RECEIVE_TASK";
 export const REMOVE_TASK = "REMOVE_TASK";
 
+/////////////////////////////
+//Open Landing Page Actions//
+/////////////////////////////
+
+export const SET_SELECTED_LINK = "SET_SELECTED_LINK";
+
 /////////////////////
 //Task List Actions//
 /////////////////////
 
 export const MOUNT_TASK = "MOUNT_TASK";
 export const UNMOUNT_TASK = "UNMOUNT_TASK";
-
 
 /////////////////
 //Modal Actions//

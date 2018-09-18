@@ -1,2 +1,1 @@
-export const LOGIN = "login";
-export const SIGNUP = "signup";
+export const PROJECT_FORM = "ProjectForm";
