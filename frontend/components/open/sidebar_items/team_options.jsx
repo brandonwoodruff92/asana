@@ -6,6 +6,14 @@ class TeamOptions extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    document.addEventListener("mousedown", this.handleClickOutside);
+  }
+
+  componentWillUnmount() {
+    document.addEventListener("mousedown", this.handleClickOutside);
+  }
+
   render() {
     return (
       <div className="team-options">
