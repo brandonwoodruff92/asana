@@ -19,6 +19,10 @@ export default class AppSidebar extends React.Component {
     this.toggleFavorites = this.toggleFavorites.bind(this);
   }
 
+  componentDidMount() {
+    this.props.fetchProjects();
+  }
+
   handleSelect(link) {
     return () => {
       this.props.setSelectedLink(link);
@@ -56,6 +60,12 @@ export default class AppSidebar extends React.Component {
   }
 
   render() {
+    const projects = this.props.projects.map( (project) => {
+      return (
+        
+      );
+    });
+
     return (
       <div className={ this.props.class }>
         <div className="logo-container">

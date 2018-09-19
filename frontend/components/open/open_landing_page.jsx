@@ -6,6 +6,7 @@ import { logout } from "../../actions/session_actions";
 import { setSelectedLink } from "../../actions/open_landing_page_actions";
 import { openModal } from "../../actions/modal_actions";
 import { toggleSidebar } from "../../actions/sidebar_actions";
+import { fetchProjects } from "../../actions/project_actions";
 
 import AppSidebar from "./app_sidebar";
 import Index from "./index";
@@ -28,9 +29,11 @@ const OpenLandingPage = (props) => {
   return (
     <div className="open-landing-page">
       <AppSidebar
+        projects={ props.projects }
         setSelectedLink={ props.setSelectedLink }
         openModal={ props.openModal }
         toggleSidebar={ props.toggleSidebar }
+        fetchProjects={ props.fetchProjects }
         class={ sidebarClass } />
       <div className={ `content-container ${ contentClass }` }>
         <div className="app-header">
@@ -52,6 +55,7 @@ const OpenLandingPage = (props) => {
 
 function mapStateToProps(state) {
   return {
+    projects: state.entities.projects,
     selectedLink: state.ui.openLandingPage.selectedLink,
     sidebar: state.ui.sidebar.show
   };
@@ -59,6 +63,9 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
+    fetchProjects: () => {
+      return dispatch(fetchProjects());
+    },
     logout: () => {
       return dispatch(logout());
     },

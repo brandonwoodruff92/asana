@@ -212,3 +212,12 @@
   border-top: 1px solid black;
   border-left: 1px solid black;
 }
+
+.errors-tab {
+  max-height: 100px;
+  width: 516px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgb(255, 237, 239);
+}

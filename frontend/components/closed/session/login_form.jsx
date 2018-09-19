@@ -82,10 +82,6 @@ class LoginForm extends React.Component {
     return errors;
   }
 
-  clearErrors() {
-
-  }
-
   checkFields() {
     if (this.state.email.replace(/\s+/g, '') === "") {
       this.errorBlocks.email = true;
@@ -102,6 +98,12 @@ class LoginForm extends React.Component {
       this.timeout = setTimeout(this.props.clearSessionErrors, 5000);
     }
 
+    const errors = this.props.sessionErrors.map( (error) => {
+      return (
+        <p className="session-error">{ error }</p>
+      );
+    });
+
     return (
       <div>
         <div className="session-modal-child">
@@ -111,6 +113,12 @@ class LoginForm extends React.Component {
             <form className="session-form" onSubmit={ this.handleSubmit }>
               <div className="form-content">
                 <h3 className="session-header">Log In</h3>
+
+                <div className="errors-tab">
+                  <ul>
+                    { errors }
+                  </ul>
+                </div>
 
                 <label className="session-label">
                   Email Address
