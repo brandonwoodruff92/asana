@@ -1,5 +1,12 @@
 export default class OpenLandingPageUtil {
-  static parseLocation(location) {
-    const locationArray = location.split("/");
+  static parseCurrentLocation() {
+    const locationArray = window.location.array.split("/");
+
+    switch (true) {
+      case (locationArray.includes("home")):
+        return "Home";
+      default:
+
+    }
   }
 }

@@ -1,0 +1,125 @@
+.project-form {
+  width: 580px;
+  min-height: 551px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 10px 15px 0px;
+  border-radius: 4px;
+}
+
+.project-form-header {
+  padding: 10px 30px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-bottom: 1px solid rgb(224, 230, 232);
+}
+
+.project-form-header > p {
+  font-size: 24px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 500;
+}
+
+.project-form-content {
+  height: 100%;
+  padding-top: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.project-name-form {
+  height: 62px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.label-container {
+  margin-bottom: 5px;
+  color: rgb(132, 143, 153);
+  font-size: 12px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 500;
+}
+
+#project-name-input {
+  height: 100%;
+  border: 1px solid rgb(255, 82, 99);
+  border-radius: 4px;
+  padding: 9px;
+  font-size: 13px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 400;
+}
+
+.project-description-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+#project-description-input {
+  height: 70px;
+  padding: 9px;
+  font-size: 13px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 400;
+}
+
+.project-layout-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+.layout-input-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.layout-input-item {
+  display: flex;
+  height: 34px;
+}
+
+#second-radio-button {
+  margin-top: 15px;
+}
+
+.project-radio-input {
+  width: 12px;
+  height: 13px;
+}
+
+.project-form-icon {
+  height: 16px;
+  width: 16px;
+  margin-right: 5px;
+  margin-left: 10px;
+  fill: #b9bec1;
+}
+
+.option-description-label {
+  font-size: 13px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 400;
+  width: 100%;
+}
+
+.option-description {
+  padding: 5px;
+  color: rgb(132, 143, 153);
+  font-size: 11px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 400;
+}
+
+#board {
+  transform: rotate(180deg);
+}
