@@ -6,7 +6,7 @@ import { logout } from "../../actions/session_actions";
 import { setSelectedLink } from "../../actions/open_landing_page_actions";
 import { openModal } from "../../actions/modal_actions";
 import { toggleSidebar } from "../../actions/sidebar_actions";
-import { fetchProjects } from "../../actions/project_actions";
+import { fetchAllProjects } from "../../actions/project_actions";
 
 import AppSidebar from "./app_sidebar";
 import Index from "./index";
@@ -64,7 +64,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     fetchProjects: () => {
-      return dispatch(fetchProjects());
+      return dispatch(fetchAllProjects());
     },
     logout: () => {
       return dispatch(logout());

@@ -18,6 +18,7 @@ class User < ApplicationRecord
   class_name: "UserProject"
 
   belongs_to :team,
+  optional: true,
   foreign_key: :team_id,
   class_name: "Team"
 
