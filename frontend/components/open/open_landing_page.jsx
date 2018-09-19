@@ -18,11 +18,11 @@ const OpenLandingPage = (props) => {
   if (props.sidebar) {
     sidebarClass = "app-sidebar-show";
     contentClass = "content-closed";
-    menuButton = null;
+    menuButton = SvgUtil.renderMenuButton("open-menu button-hidden", props.toggleSidebar);
   } else {
     sidebarClass = "app-sidebar-hide";
     contentClass = "content-open";
-    menuButton = SvgUtil.renderMenuButton("open-menu", props.toggleSidebar);
+    menuButton = SvgUtil.renderMenuButton("open-menu button-show", props.toggleSidebar);
   }
 
   return (

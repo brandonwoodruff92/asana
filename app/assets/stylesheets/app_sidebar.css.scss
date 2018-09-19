@@ -18,14 +18,9 @@
   }
 }
 
-.sidebar-slideout {
-  animation-name: sidebar_slideout;
-  animation-duration: .5s;
-}
-
 .app-sidebar-show {
   animation-name: sidebar_slidein;
-  animation-duration: .5s;
+  animation-duration: .3s;
   min-width: 244px;
   width: 244px;
   height: 100vh;
@@ -35,7 +30,7 @@
 
 .app-sidebar-hide {
   animation-name: sidebar_slideout;
-  animation-duration: .5s;
+  animation-duration: .3s;
   width: 244px;
   height: 100vh;
   background-color: #151b26;

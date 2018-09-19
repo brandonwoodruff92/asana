@@ -22,14 +22,34 @@
   }
 }
 
+@keyframes menu_button_shrink {
+  0% {
+    width: 45px;
+  }
+
+  100% {
+    width: 0px;
+  }
+}
+
+.button-hidden {
+  width: 0px;
+  transition: width .1s;
+}
+
+.button-show {
+  width: 45px;
+  transition: width .1s;
+}
+
 .content-closed {
   animation-name: content_slidein;
-  animation-duration: .5s;
+  animation-duration: .3s;
 }
 
 .content-open {
   animation-name: content_slideout;
-  animation-duration: .5s;
+  animation-duration: .3s;
 }
 
 .open-landing-page {
