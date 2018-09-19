@@ -10,12 +10,11 @@ export default class AppSidebar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      newProject: false,
       favorites: false
     };
 
     this.handleSelect = this.handleSelect.bind(this);
-    this.toggleNewProject = this.toggleNewProject.bind(this);
+    this.toggleTeamOptions = this.toggleTeamOptions.bind(this);
     this.toggleFavorites = this.toggleFavorites.bind(this);
   }
 
@@ -44,16 +43,16 @@ export default class AppSidebar extends React.Component {
     }
   }
 
-  toggleNewProject(e) {
+  toggleTeamOptions(e) {
     e.stopPropagation();
-    this.setState({
-      newProject: this.state.newProject ? false : true
-    });
+    this.props.toggleTeamOptions();
   }
 
   renderTeamOptions() {
-    if (this.state.newProject) {
-      return <TeamOptions openModal={ this.props.openModal } />;
+    if (this.props.showTeamOptions) {
+      return <TeamOptions
+        openModal={ this.props.openModal }
+        toggleTeamOptions={ this.props.toggleTeamOptions } />;
     } else {
       return null;
     }
@@ -80,9 +79,7 @@ export default class AppSidebar extends React.Component {
                 className="sidebar-nav-link"
                 activeClassName="selected"
                 onClick={ this.handleSelect("Home") }>
-                <img
-                  id="home-img"
-                  src="/assets/home.svg" />
+                { SvgUtil.renderHome() }
                 <p>Home</p>
               </NavLink>
               <NavLink
@@ -91,9 +88,7 @@ export default class AppSidebar extends React.Component {
                 className="sidebar-nav-link"
                 activeClassName="selected"
                 onClick={ this.handleSelect("My Tasks") }>
-                <img
-                  id="tasks-img"
-                  src="/assets/right.svg" />
+                { SvgUtil.renderCheck() }
                 <p>My Tasks</p>
               </NavLink>
             </ul>
@@ -122,7 +117,7 @@ export default class AppSidebar extends React.Component {
                 </NavLink>
                 <p
                   id="plus-button"
-                  onClick={ this.toggleNewProject }>+</p>
+                  onClick={ this.toggleTeamOptions }>+</p>
                 { this.renderTeamOptions() }
               </div>
             </ul>

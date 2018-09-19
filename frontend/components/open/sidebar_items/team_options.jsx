@@ -4,6 +4,7 @@ import * as ModalConstants from "../../../constants/modal_constants";
 class TeamOptions extends React.Component {
   constructor(props) {
     super(props);
+    this.handleClickOutside = this.handleClickOutside.bind(this);
   }
 
   componentDidMount() {
@@ -14,9 +15,17 @@ class TeamOptions extends React.Component {
     document.addEventListener("mousedown", this.handleClickOutside);
   }
 
+  handleClickOutside(e) {
+    const node = document.getElementById("team-options");
+    if (!node.contains(e.target)) {
+      console.log("hello");
+      this.props.toggleTeamOptions();
+    }
+  }
+
   render() {
     return (
-      <div className="team-options">
+      <div id="team-options" className="team-options">
         <ul className="options-list">
           <p
             className="team-option"

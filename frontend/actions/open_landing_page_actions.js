@@ -6,3 +6,9 @@ export const setSelectedLink = (link) => {
     link
   };
 };
+
+export const toggleTeamOptions = () => {
+  return {
+    type: ActionConstants.TOGGLE_TEAM_OPTIONS
+  };
+};

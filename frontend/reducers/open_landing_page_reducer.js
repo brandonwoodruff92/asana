@@ -1,12 +1,19 @@
 import { merge } from "lodash";
 import * as ActionConstants from "../constants/action_constants";
 
-const openLandingPageReducer = (state = {}, action) => {
+const defaultState = {
+  showTeamOptions: false
+};
+
+const openLandingPageReducer = (state = defaultState, action) => {
   const newState = merge({}, state);
 
   switch (action.type) {
     case ActionConstants.SET_SELECTED_LINK:
       newState.selectedLink = action.link;
+      return newState;
+    case ActionConstants.TOGGLE_TEAM_OPTIONS:
+      newState.showTeamOptions = state.showTeamOptions ? false : true;
       return newState;
     default:
       return state;
