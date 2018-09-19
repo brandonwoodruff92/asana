@@ -60,11 +60,8 @@ export default class AppSidebar extends React.Component {
   }
 
   render() {
-    const projects = this.props.projects.map( (project) => {
-      return (
-        
-      );
-    });
+    // const projects = this.props.projects.map( (project) => {
+    // });
 
     return (
       <div className={ this.props.class }>
