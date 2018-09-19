@@ -11,25 +11,28 @@ import AppSidebar from "./app_sidebar";
 import Index from "./index";
 
 const OpenLandingPage = (props) => {
-  let appSidebar;
   let menuButton;
+  let sidebarClass;
+  let contentClass;
 
   if (props.sidebar) {
-    appSidebar = <AppSidebar
-      setSelectedLink={ props.setSelectedLink }
-      openModal={ props.openModal }
-      toggleSidebar={ props.toggleSidebar } />;
-
+    sidebarClass = "app-sidebar-show";
+    contentClass = "content-closed";
     menuButton = null;
   } else {
-    appSidebar = null;
+    sidebarClass = "app-sidebar-hide";
+    contentClass = "content-open";
     menuButton = SvgUtil.renderMenuButton("open-menu", props.toggleSidebar);
   }
 
   return (
     <div className="open-landing-page">
-      { appSidebar }
-      <div className="content-container">
+      <AppSidebar
+        setSelectedLink={ props.setSelectedLink }
+        openModal={ props.openModal }
+        toggleSidebar={ props.toggleSidebar }
+        class={ sidebarClass } />
+      <div className={ `content-container ${ contentClass }` }>
         <div className="app-header">
           <div className="left-header">
             { menuButton }

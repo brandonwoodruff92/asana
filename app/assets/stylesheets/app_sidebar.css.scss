@@ -1,4 +1,31 @@
-.app-sidebar {
+@keyframes sidebar_slideout {
+  0% {
+    left: 0;
+  }
+
+  100% {
+    left: -244px;
+  }
+}
+
+@keyframes sidebar_slidein {
+  0% {
+    left: -244px;
+  }
+
+  100% {
+    left: 0;
+  }
+}
+
+.sidebar-slideout {
+  animation-name: sidebar_slideout;
+  animation-duration: .5s;
+}
+
+.app-sidebar-show {
+  animation-name: sidebar_slidein;
+  animation-duration: .5s;
   min-width: 244px;
   width: 244px;
   height: 100vh;
@@ -6,7 +33,17 @@
   position: relative;
 }
 
-.app-sidebar:hover {
+.app-sidebar-hide {
+  animation-name: sidebar_slideout;
+  animation-duration: .5s;
+  width: 244px;
+  height: 100vh;
+  background-color: #151b26;
+  position: absolute;
+  left: -245px;
+}
+
+.app-sidebar-show:hover {
   #caret {
     visibility: visible;
   }
@@ -87,6 +124,7 @@
 }
 
 .sidebar-section {
+  position: relative;
   padding-top: 10px;
   padding-bottom: 10px;
   display: flex;
@@ -108,6 +146,8 @@
 }
 
 #plus-button {
+  position: absolute;
+  right: 10px;
   color: #8a8d93;
   padding: 5px;
   font-size: 18px;
@@ -117,6 +157,7 @@
 
 #plus-button:hover {
   color: white;
+  cursor: pointer;
 }
 
 .sidebar-nav-link {

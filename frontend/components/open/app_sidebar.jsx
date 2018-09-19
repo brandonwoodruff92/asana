@@ -57,7 +57,7 @@ export default class AppSidebar extends React.Component {
 
   render() {
     return (
-      <div className="app-sidebar">
+      <div className={ this.props.class }>
         <div className="logo-container">
           <img
             id="logo-img"
@@ -111,11 +111,11 @@ export default class AppSidebar extends React.Component {
                   onClick={ this.handleSelect("Team Name") }>
                   <div className="team-section">
                     <p id="team-name">Team Name</p>
-                    <p
-                      id="plus-button"
-                      onClick={ this.toggleNewProject }>+</p>
                   </div>
                 </NavLink>
+                <p
+                  id="plus-button"
+                  onClick={ this.toggleNewProject }>+</p>
                 { this.renderTeamOptions() }
               </div>
             </ul>

@@ -1,9 +1,48 @@
+@keyframes content_slideout {
+  0% {
+    width: calc(100% + 244px);
+    margin-left: 244px;
+  }
+
+  100% {
+    width: calc(100% + 0px);
+    margin-left: 0px;
+  }
+}
+
+@keyframes content_slidein {
+  0% {
+    width: calc(100% + 0px);
+    margin-left: -244px;
+  }
+
+  100% {
+    width: calc(100% + 244px);
+    margin-left: 0px;
+  }
+}
+
+.content-closed {
+  animation-name: content_slidein;
+  animation-duration: .5s;
+}
+
+.content-open {
+  animation-name: content_slideout;
+  animation-duration: .5s;
+}
+
 .open-landing-page {
+  height: 100vh;
   display: flex;
+  box-sizing: border-box;
 }
 
 .content-container {
   width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .app-content {
