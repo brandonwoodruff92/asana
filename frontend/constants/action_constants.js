@@ -41,6 +41,7 @@ export const SET_SELECTED_LINK = "SET_SELECTED_LINK";
 export const TOGGLE_SIDEBAR = "TOGGLE_SIDEBAR";
 export const TOGGLE_TEAM_OPTIONS = "TOGGLE_TEAM_OPTIONS";
 export const TOGGLE_USER_OPTIONS = "TOGGLE_USER_OPTIONS";
+export const TOGGLE_APP_OPTIONS = "TOGGLE_APP_OPTIONS";
 
 /////////////////////
 //Task List Actions//

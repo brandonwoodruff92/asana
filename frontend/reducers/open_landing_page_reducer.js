@@ -18,6 +18,9 @@ const openLandingPageReducer = (state = defaultState, action) => {
     case ActionConstants.TOGGLE_USER_OPTIONS:
       newState.showUserOptions = state.showUserOptions ? false : true;
       return newState;
+    case ActionConstants.TOGGLE_APP_OPTIONS:
+      newState.showAppOptions = state.showAppOptions ? false : true;
+      return newState;
     default:
       return state;
   }

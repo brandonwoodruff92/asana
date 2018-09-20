@@ -61,8 +61,7 @@ class SignupForm extends React.Component {
 
     const team = { name: this.state.teamName };
 
-    this.props.createTeam(team);
-    this.props.signup(user);
+    this.props.signup(user, team);
   }
 
   renderErrors() {
@@ -195,8 +194,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    signup: (user) => {
-      return dispatch(signup(user));
+    signup: (user, team) => {
+      return dispatch(signup(user, team));
     },
     createTeam: (team) => {
       return dispatch(createTeam(team));

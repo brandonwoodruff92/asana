@@ -87,9 +87,9 @@ export default class SvgUtil {
     );
   }
 
-  static renderList() {
+  static renderList(id = "list") {
     return (
-      <svg id="list" className="project-form-icon" viewBox="0 0 60 60">
+      <svg id={ id } className="project-form-icon" viewBox="0 0 60 60">
       <g>
         <path d="M23.429,17H47c0.552,0,1-0.447,1-1s-0.448-1-1-1H23.429c-0.552,0-1,0.447-1,1S22.877,17,23.429,17z"/>
         <path d="M23.429,32H47c0.552,0,1-0.447,1-1s-0.448-1-1-1H23.429c-0.552,0-1,0.447-1,1S22.877,32,23.429,32z"/>
@@ -107,9 +107,9 @@ export default class SvgUtil {
     );
   }
 
-  static renderBoard() {
+  static renderBoard(id = "board") {
     return (
-      <svg id="board" className="project-form-icon" viewBox="0 0 490 490">
+      <svg id={ id } className="project-form-icon" viewBox="0 0 490 490">
       <g>
         <g>
           <path d="M117,220H9.9c-5.5,0-9.9,4.4-9.9,9.9v248c0,5.5,4.4,9.9,9.9,9.9H117c5.5,0,9.9-4.4,9.9-9.9v-248

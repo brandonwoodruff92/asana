@@ -1,5 +1,6 @@
 class Api::TeamsController < ApplicationController
   def create
+    debugger
     @team = Team.new(team_params)
     @team.description = "a";
     @team.team_type = "b";

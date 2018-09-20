@@ -3,13 +3,14 @@ import { connect } from "react-redux";
 import SvgUtil from "../../util/svg_util";
 
 import { logout } from "../../actions/session_actions";
-import { setSelectedLink, toggleTeamOptions, toggleUserOptions } from "../../actions/open_landing_page_actions";
+import { setSelectedLink, toggleTeamOptions, toggleUserOptions, toggleAppOptions } from "../../actions/open_landing_page_actions";
 import { openModal } from "../../actions/modal_actions";
 import { toggleSidebar } from "../../actions/sidebar_actions";
 import { fetchAllProjects, createProject } from "../../actions/project_actions";
 
 import AppSidebar from "./app_sidebar";
 import UserOptions from "./landing_page_items/user_options";
+import AppOptions from "./landing_page_items/app_options";
 import Index from "./index";
 
 class OpenLandingPage extends React.Component {
@@ -23,6 +24,18 @@ class OpenLandingPage extends React.Component {
         <UserOptions
           logout={ this.props.logout }
           toggleUserOptions={ this.props.toggleUserOptions } />
+      );
+    } else {
+      return null;
+    }
+  }
+
+  renderAppOptions() {
+    if (this.props.showAppOptions) {
+      return (
+        <AppOptions
+          openModal={ this.props.openModal }
+          toggleAppOptions={ this.props.toggleAppOptions } />
       );
     } else {
       return null;
@@ -64,6 +77,12 @@ class OpenLandingPage extends React.Component {
             </div>
             <div className="right-header">
               <div
+                className="app-options-button"
+                onClick={ this.props.toggleAppOptions }>
+                +
+              </div>
+              { this.renderAppOptions() }
+              <div
                 className="user-options-button"
                 onClick={ this.props.toggleUserOptions }>
                 BW
@@ -86,7 +105,8 @@ function mapStateToProps(state) {
     selectedLink: state.ui.openLandingPage.selectedLink,
     sidebar: state.ui.sidebar.show,
     showTeamOptions: state.ui.openLandingPage.showTeamOptions,
-    showUserOptions: state.ui.openLandingPage.showUserOptions
+    showUserOptions: state.ui.openLandingPage.showUserOptions,
+    showAppOptions: state.ui.openLandingPage.showAppOptions
   };
 }
 
@@ -115,6 +135,9 @@ function mapDispatchToProps(dispatch) {
     },
     toggleUserOptions: () => {
       return dispatch(toggleUserOptions());
+    },
+    toggleAppOptions: () => {
+      return dispatch(toggleAppOptions());
     }
   };
 }

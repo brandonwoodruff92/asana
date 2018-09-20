@@ -18,3 +18,9 @@ export const toggleUserOptions = () => {
     type: ActionConstants.TOGGLE_USER_OPTIONS
   };
 };
+
+export const toggleAppOptions = () => {
+  return {
+    type: ActionConstants.TOGGLE_APP_OPTIONS
+  };
+};
