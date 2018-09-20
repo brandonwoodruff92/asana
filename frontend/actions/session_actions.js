@@ -59,16 +59,13 @@ export const logout = () => {
 export const signup = (user, team) => {
   return (dispatch) => {
     return TeamApiUtil.createTeam(team).then( (team) => {
-      debugger
+
       user.team_id = team.id;
       SessionApiUtil.signup(user).then( (user) => {
         dispatch(receiveCurrentUser(user));
       }, (err) => {
         dispatch(receiveErrors(err.responseJSON));
       });
-    }, (err) => {
-      debugger
-      console.log(err);
     });
   };
 };

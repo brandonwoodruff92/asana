@@ -128,7 +128,7 @@ class ProjectForm extends React.Component {
                   type="radio"
                   name="privacy-radio"
                   checked />
-                { SvgUtil.renderList() }
+                { SvgUtil.renderUsers() }
                 <div className="option-description-container">
                   <div className="option-description-label">Public to Team</div>
                 </div>
@@ -140,7 +140,7 @@ class ProjectForm extends React.Component {
                   className="project-radio-input"
                   type="radio"
                   name="privacy-radio" />
-                { SvgUtil.renderBoard() }
+                { SvgUtil.renderUser() }
                 <div className="option-description-container">
                   <div className="option-description-label">Private to me</div>
                 </div>
