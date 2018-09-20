@@ -1,4 +1,5 @@
 import SessionApiUtil from "../util/session_api_util";
+import TeamApiUtil from "../util/team_api_util";
 import * as ActionConstants from "../constants/action_constants";
 
 export const receiveCurrentUser = (currentUser) => {
@@ -45,12 +46,29 @@ export const logout = () => {
   };
 };
 
-export const signup = (user) => {
+// export const signup = (user) => {
+//   return (dispatch) => {
+//     return SessionApiUtil.signup(user).then( (user) => {
+//       return dispatch(receiveCurrentUser(user));
+//     }, (err) => {
+//       dispatch(receiveErrors(err.responseJSON));
+//     });
+//   };
+// };
+
+export const signup = (user, team) => {
   return (dispatch) => {
-    return SessionApiUtil.signup(user).then( (user) => {
-      return dispatch(receiveCurrentUser(user));
+    return TeamApiUtil.createTeam(team).then( (team) => {
+      debugger
+      user.team_id = team.id;
+      SessionApiUtil.signup(user).then( (user) => {
+        dispatch(receiveCurrentUser(user));
+      }, (err) => {
+        dispatch(receiveErrors(err.responseJSON));
+      });
     }, (err) => {
-      dispatch(receiveErrors(err.responseJSON));
+      debugger
+      console.log(err);
     });
   };
 };

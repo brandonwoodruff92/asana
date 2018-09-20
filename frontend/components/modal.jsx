@@ -14,7 +14,7 @@ const Modal = ({ modal, closeModal }) => {
 
   switch (modal) {
     case ModalConstants.PROJECT_FORM:
-      component = <ProjectForm />;
+      component = <ProjectForm closeModal={ closeModal }/>;
       break;
     default:
       return null;

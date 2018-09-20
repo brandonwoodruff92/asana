@@ -60,6 +60,9 @@ export default class AppSidebar extends React.Component {
 
   render() {
     // const projects = this.props.projects.map( (project) => {
+    //   return (
+    //     <SidebarProjectItem project={ project } />
+    //   );
     // });
 
     return (
@@ -120,6 +123,8 @@ export default class AppSidebar extends React.Component {
                   onClick={ this.toggleTeamOptions }>+</p>
                 { this.renderTeamOptions() }
               </div>
+            </ul>
+            <ul className="sidebar-project-list">
             </ul>
           </div>
         </ul>

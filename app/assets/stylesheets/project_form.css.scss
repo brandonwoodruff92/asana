@@ -21,6 +21,25 @@
   font-size: 24px;
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
   font-weight: 500;
+  position: relative;
+}
+
+#project-form-close {
+  color: rgb(132, 143, 153);
+  font-size: 16px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 400;
+  height: 16px;
+  width: 16px;
+  position: absolute;
+  text-align: center;
+  right: 13px;
+  top: 12px;
+}
+
+#project-form-close:hover {
+  color: rgb(34, 43, 55);
+  cursor: pointer;
 }
 
 .project-form-content {
@@ -48,7 +67,7 @@
   font-weight: 500;
 }
 
-#project-name-input {
+.project-name-input {
   height: 100%;
   border: 1px solid rgb(255, 82, 99);
   border-radius: 4px;
@@ -58,21 +77,40 @@
   font-weight: 400;
 }
 
+.project-name-not-empty {
+  border: 1px solid rgb(213, 220, 224);
+}
+
 .project-description-form {
   display: flex;
   flex-direction: column;
   margin-top: 30px;
 }
 
-#project-description-input {
+.description-label-closed {
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+}
+
+.description-label-closed:hover {
+  cursor: pointer;
+  text-decoration-style: solid;
+}
+
+.description-input-closed {
+  display: none;
+}
+
+.project-description-input {
   height: 70px;
   padding: 9px;
   font-size: 13px;
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
   font-weight: 400;
+  resize: none;
 }
 
-.project-layout-form {
+.project-radio-form {
   display: flex;
   flex-direction: column;
   margin-top: 30px;
@@ -122,4 +160,40 @@
 
 #board {
   transform: rotate(180deg);
+}
+
+.button-container {
+  padding-top: 30px;
+  padding-bottom: 15px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.project-submit-button {
+  background-color: rgb(14, 161, 240);
+  width: 116px;
+  height: 40px;
+  font-size: 14px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 400;
+  color: white;
+  border-radius: 4px;
+  border: 1px solid rgb(224, 230, 232);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-disabled {
+  background-color: rgb(237, 241, 242);
+  color: rgb(183, 191, 198);
+}
+
+.button-disabled:hover {
+  cursor: default;
+}
+
+.button-active:hover {
+  background-color: #008ce3;
+  cursor: pointer;
 }

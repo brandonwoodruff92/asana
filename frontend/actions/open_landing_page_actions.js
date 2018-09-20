@@ -12,3 +12,9 @@ export const toggleTeamOptions = () => {
     type: ActionConstants.TOGGLE_TEAM_OPTIONS
   };
 };
+
+export const toggleUserOptions = () => {
+  return {
+    type: ActionConstants.TOGGLE_USER_OPTIONS
+  };
+};

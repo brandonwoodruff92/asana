@@ -100,3 +100,46 @@
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
   line-height: 17px;
 }
+
+.user-options-button {
+  border-radius: 50%;
+  background-color: #fc91ad;
+  height: 24px;
+  width: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 11px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: white;
+}
+
+.user-options-button:hover {
+  cursor: pointer;
+}
+
+#user-options {
+  background-color: white;
+  padding: 5px 0;
+  border: 1px solid rgb(213, 220, 224);
+  border-radius: 4px;
+  box-shadow: 0 10px 15px 0 rgba(0,0,0,0.06);
+  width: 252px;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-options-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-option {
+  height: 40px;
+  padding-left: 30px;
+  padding-right: 10px;
+  font-size: 13px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  display: flex;
+  align-items: center;
+}

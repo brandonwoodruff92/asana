@@ -11,6 +11,12 @@ export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
 
 export const RECEIVE_USER = "RECEIVE_USER";
 
+////////////////
+//Team Actions//
+////////////////
+
+export const RECEIVE_TEAM = "RECEIVE_TEAM";
+
 ///////////////////
 //Project Actions//
 ///////////////////
@@ -34,6 +40,7 @@ export const REMOVE_TASK = "REMOVE_TASK";
 export const SET_SELECTED_LINK = "SET_SELECTED_LINK";
 export const TOGGLE_SIDEBAR = "TOGGLE_SIDEBAR";
 export const TOGGLE_TEAM_OPTIONS = "TOGGLE_TEAM_OPTIONS";
+export const TOGGLE_USER_OPTIONS = "TOGGLE_USER_OPTIONS";
 
 /////////////////////
 //Task List Actions//

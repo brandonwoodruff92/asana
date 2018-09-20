@@ -5,6 +5,7 @@ import * as RouteConstants from "../../../constants/route_constants";
 import * as ErrorConstants from "../../../constants/error_constants";
 
 import { signup, clearSessionErrors } from "../../../actions/session_actions";
+import { createTeam } from "../../../actions/team_actions";
 
 // TODO: Add main errors bar at the top
 
@@ -15,13 +16,15 @@ class SignupForm extends React.Component {
       name: "",
       email: "",
       password: "",
+      teamName: "",
       isHidden: true
     };
 
     this.errorBlocks = {
       name: false,
       email: false,
-      password: false
+      password: false,
+      team: false
     };
 
     this.errors = this.props.sessionErrors;
@@ -55,6 +58,10 @@ class SignupForm extends React.Component {
     const user = { name: this.state.name,
       email: this.state.email,
       password: this.state.password };
+
+    const team = { name: this.state.teamName };
+
+    this.props.createTeam(team);
     this.props.signup(user);
   }
 
@@ -105,6 +112,10 @@ class SignupForm extends React.Component {
     if (this.state.password.replace(/\s+/g, '') === "") {
       this.errorBlocks.password = true;
     }
+
+    if (this.state.teamName.replace(/\s+/g, '') === "") {
+      this.errorBlocks.teamName = true;
+    }
   }
 
   render() {
@@ -139,6 +150,15 @@ class SignupForm extends React.Component {
                     type="text" value={ this.state.email }
                     onChange={ this.update("email") }
                     placeholder="name@company.com" />
+                </label>
+
+                <label className="session-label">
+                  Team Name
+                  <br/>
+                  <input className="session-form-input"
+                    tyee="text" value={ this.state.teamName}
+                    onChange={ this.update("teamName") }
+                    placeholder="Team Name" />
                 </label>
 
                 <label className="session-label">
@@ -177,6 +197,9 @@ function mapDispatchToProps(dispatch) {
   return {
     signup: (user) => {
       return dispatch(signup(user));
+    },
+    createTeam: (team) => {
+      return dispatch(createTeam(team));
     },
     clearSessionErrors: () => {
       return dispatch(clearSessionErrors());

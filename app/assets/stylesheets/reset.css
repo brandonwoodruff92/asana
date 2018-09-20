@@ -49,3 +49,6 @@ input {
   outline: none;
   margin: 0px;
 }
+input[type="button"] {
+  outline: none;
+}

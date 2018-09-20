@@ -1,5 +1,5 @@
 class Team < ApplicationRecord
-  validates :name, :team_type, presence: true
+  validates :name, presence: true
 
   has_many :team_associations,
   foreign_key: :team_id,
