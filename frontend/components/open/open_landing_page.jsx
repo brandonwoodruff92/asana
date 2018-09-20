@@ -13,6 +13,8 @@ import UserOptions from "./landing_page_items/user_options";
 import AppOptions from "./landing_page_items/app_options";
 import Index from "./index";
 
+//WHY DOES PROJECT ID RETURN UNDEFINED IN STATE???
+
 class OpenLandingPage extends React.Component {
   constructor(props) {
     super(props);
