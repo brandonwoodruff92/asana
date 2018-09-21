@@ -109,10 +109,14 @@
 #new-project-container:hover {
   color: #9ca6af;
   cursor: pointer;
+
+  #new-project-box {
+    border-color: #9ca6af;
+  }
 }
 
 #new-project-box {
-  border: 2px dashed rgb(183, 191, 198);
+  border: 2px dashed #b7bfc6;
   font-size: 20px;
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
