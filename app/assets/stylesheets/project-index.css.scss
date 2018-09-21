@@ -1,0 +1,118 @@
+.project-index {
+  margin-top: 30px;
+  margin-bottom: 75px;
+  margin-left: 15%;
+  margin-right: 15%;
+  padding: 0 60px;
+  width: 61%;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-index-header {
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-bottom: 15px;
+  padding: 10px 0;
+  border-bottom: 2px solid rgb(237, 241, 242);
+}
+
+#recent-projects-header {
+  font-size: 16px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 500;
+}
+
+.project-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.project-item-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 150px;
+  height: 211px;
+  margin: 0 10px;
+  padding: 15px 0;
+  transition: transform .4s;
+}
+
+.project-item-container:hover {
+  cursor: pointer;
+  transform: translate3d(0, -5px, 0);
+
+  #project-item-ellipsis {
+    opacity: 1;
+  }
+}
+
+.project-item-name-text {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  padding: 0 10px;
+  max-height: 33px;
+  box-sizing: border-box;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 13px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 500;
+}
+
+.project-box {
+  width: 120px;
+  height: 120px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+#project-item-icon {
+  height: 32px;
+  width: 32px;
+  fill: white;
+  margin: 0;
+}
+
+#project-item-ellipsis {
+  fill: rgba(255,255,255,0.5);
+  height: 16px;
+  width: 16px;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  opacity: 0;
+  transition: opacity .4s;
+}
+
+#project-item-ellipsis:hover {
+  fill: rgb(255, 255, 255);
+}
+
+#new-project-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 150px;
+  height: 211px;
+  margin: 0 10px;
+  padding: 15px 0;
+  color: rgb(183, 191, 198);
+}
+
+#new-project-container:hover {
+  color: #9ca6af;
+  cursor: pointer;
+}
+
+#new-project-box {
+  border: 2px dashed rgb(183, 191, 198);
+  font-size: 20px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}

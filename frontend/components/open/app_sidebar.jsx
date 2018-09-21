@@ -5,6 +5,9 @@ import SvgUtil from "../../util/svg_util";
 
 import TeamOptions from "./sidebar_items/team_options";
 import Favorites from "./sidebar_items/favorites";
+import SidebarProjectItem from "./sidebar_items/sidebar_project_item";
+
+//this.props.projects returns undefined
 
 export default class AppSidebar extends React.Component {
   constructor(props) {
@@ -58,13 +61,15 @@ export default class AppSidebar extends React.Component {
     }
   }
 
-  render() {
-    // const projects = this.props.projects.map( (project) => {
-    //   return (
-    //     <SidebarProjectItem project={ project } />
-    //   );
-    // });
+  renderSidebarProjectItems() {
+    return this.props.projects.map( (project) => {
+      return (
+        <SidebarProjectItem project={ project } />
+      );
+    });
+  }
 
+  render() {
     return (
       <div className={ this.props.class }>
         <div className="logo-container">
@@ -115,7 +120,7 @@ export default class AppSidebar extends React.Component {
                   activeClassName="selected"
                   onClick={ this.handleSelect("Team Name") }>
                   <div className="team-section">
-                    <p id="team-name">Team Name</p>
+                    <p id="team-name">{ this.props.currentUser.team.name }</p>
                   </div>
                 </NavLink>
                 <p

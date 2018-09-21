@@ -8,7 +8,7 @@ import TeamPage from "./team/team_page";
 
 const Index = () => {
   return (
-    <div>
+    <div className="app-content">
       <Route path={ RouteConstants.HOME } component={ HomePage } />
       <Route path={ RouteConstants.TASKS } component={ TaskPage } />
       <Route path={ RouteConstants.TEAM } component={ TeamPage } />

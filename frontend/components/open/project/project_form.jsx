@@ -1,8 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
 import SvgUtil from "../../../util/svg_util";
+import { COLORS } from "../../../constants/color_constants";
 
 import { createProject } from "../../../actions/project_actions";
+import { closeModal } from "../../../actions/modal_actions";
 
 class ProjectForm extends React.Component {
   constructor(props) {
@@ -35,10 +37,12 @@ class ProjectForm extends React.Component {
     if (this.state.projectName) {
       const project = {
         name: this.state.projectName,
-        description: this.state.projectDescription
+        description: this.state.projectDescription,
+        color_id: COLORS[Math.floor(Math.random()*COLORS.length)]
       };
 
       this.props.createProject(project);
+      this.props.closeModal();
     }
   }
 
@@ -164,6 +168,9 @@ function mapDispatchToProps(dispatch) {
   return {
     createProject: (project) => {
       return dispatch(createProject(project));
+    },
+    closeModal: () => {
+      return dispatch(closeModal());
     }
   };
 }

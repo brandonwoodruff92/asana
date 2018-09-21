@@ -13,8 +13,6 @@ import UserOptions from "./landing_page_items/user_options";
 import AppOptions from "./landing_page_items/app_options";
 import Index from "./index";
 
-//WHY DOES PROJECT ID RETURN UNDEFINED IN STATE???
-
 class OpenLandingPage extends React.Component {
   constructor(props) {
     super(props);
@@ -63,6 +61,7 @@ class OpenLandingPage extends React.Component {
       <div className="open-landing-page">
         <AppSidebar
           projects={ this.props.projects }
+          currentUser={ this.props.currentUser }
           showTeamOptions={ this.props.showTeamOptions }
           setSelectedLink={ this.props.setSelectedLink }
           openModal={ this.props.openModal }
@@ -92,9 +91,7 @@ class OpenLandingPage extends React.Component {
               { this.renderUserOptions() }
             </div>
           </div>
-          <div className="app-content">
-            <Index />
-          </div>
+          <Index />
         </div>
       </div>
     );
@@ -103,6 +100,7 @@ class OpenLandingPage extends React.Component {
 
 function mapStateToProps(state) {
   return {
+    currentUser: state.entities.users[state.session.id],
     projects: state.entities.projects,
     selectedLink: state.ui.openLandingPage.selectedLink,
     sidebar: state.ui.sidebar.show,
