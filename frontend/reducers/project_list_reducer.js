@@ -8,6 +8,9 @@ const projectListReducer = (state = {}, action) => {
     case ActionConstants.TOGGLE_PROJECT_OPTIONS:
       newState.showProjectOptions = action.projectId;
       return newState;
+    case ActionConstants.MOUNT_PROJECT_UPDATE:
+      newState.projectToUpdate = action.projectId;
+      return newState;
     default:
       return state;
   }

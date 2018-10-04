@@ -22,6 +22,7 @@ export const RECEIVE_TEAM = "RECEIVE_TEAM";
 ////////////////////////
 
 export const TOGGLE_PROJECT_OPTIONS = "TOGGLE_PROJECT_OPTIONS";
+export const MOUNT_PROJECT_UPDATE = "MOUNT_PROJECT_UPDATE";
 
 ///////////////////
 //Project Actions//

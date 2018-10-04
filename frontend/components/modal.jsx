@@ -4,8 +4,9 @@ import { connect } from "react-redux";
 import * as ModalConstants from "../constants/modal_constants";
 
 import ProjectForm from "./open/project/project_form";
+import ProjectUpdate from "./open/project/project_update";
 
-const Modal = ({ modal, closeModal }) => {
+const Modal = ({ modal, projectToUpdate, closeModal }) => {
   if (!modal) {
     return null;
   }
@@ -14,7 +15,10 @@ const Modal = ({ modal, closeModal }) => {
 
   switch (modal) {
     case ModalConstants.PROJECT_FORM:
-      component = <ProjectForm closeModal={ closeModal }/>;
+      component = <ProjectForm closeModal={ closeModal } />;
+      break;
+    case ModalConstants.PROJECT_UPDATE:
+      component = <ProjectUpdate closeModal={ closeModal }  project={ projectToUpdate }/>;
       break;
     default:
       return null;
@@ -31,7 +35,8 @@ const Modal = ({ modal, closeModal }) => {
 
 function mapStateToProps(state) {
   return {
-    modal: state.ui.modal
+    modal: state.ui.modal,
+    projectToUpdate: state.ui.projectList.projectToUpdate
   };
 }
 

@@ -6,3 +6,10 @@ export const toggleProjectOptions = (projectId) => {
     projectId
   };
 };
+
+export const mountProjectUpdate = (projectId) => {
+  return {
+    type: ActionConstants.MOUNT_PROJECT_UPDATE,
+    projectId
+  };
+};
