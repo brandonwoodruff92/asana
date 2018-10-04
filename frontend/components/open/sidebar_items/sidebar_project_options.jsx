@@ -33,6 +33,9 @@ class SidebarProjectOptions extends React.Component {
           <p className="sidebar-project-option">
             Add to Favorites
           </p>
+          <p className="sidebar-project-option">
+            Delete Project
+          </p>
         </ul>
       </div>
     );

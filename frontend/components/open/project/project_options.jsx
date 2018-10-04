@@ -28,6 +28,9 @@ export default class ProjectOptions extends React.Component {
           <p className="project-option">
             Add to Favorites
           </p>
+          <p className="project-option">
+            Edit Name & Description...
+          </p>
         </ul>
       </div>
     );
