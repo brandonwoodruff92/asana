@@ -5,3 +5,10 @@ export const toggleSidebar = () => {
     type: ActionConstants.TOGGLE_SIDEBAR
   };
 };
+
+export const toggleSidebarProjectOptions = (projectId) => {
+  return {
+    type: ActionConstants.TOGGLE_SIDEBAR_PROJECT_OPTIONS,
+    projectId
+  };
+};

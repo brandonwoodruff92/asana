@@ -124,6 +124,7 @@
   padding-bottom: 10px;
   display: flex;
   align-items: center;
+  flex-direction: column;
 }
 
 .nav-list {
@@ -293,6 +294,81 @@
 }
 
 .sidebar-project-item {
+
+}
+
+.sidebar-project-list {
+  width: 100%;
+}
+
+.sidebar-project-item {
+  height: 28px;
+  display: flex;
+  align-items: center;
   padding-left: 15px;
-  padding-right: 10px;
+  position: relative;
+}
+
+.sidebar-project-item:hover {
+  cursor: pointer;
+  background-color: rgba(255,255,255,0.08);
+
+  #sidebar-project-ellipsis {
+    visibility: visible;
+  }
+}
+
+.sidebar-project-color-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  margin-right: 10px;
+  background-color: red;
+}
+
+.sidebar-project-name {
+  color: #d5dce0;
+  font-size: 13px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  width: 175px;
+  text-overflow: ellipsis;
+}
+
+#sidebar-project-ellipsis {
+  fill: rgb(156, 166, 175);
+  width: 12px;
+  height: 100%;
+  margin: 0 9px;
+  visibility: hidden;
+}
+
+#sidebar-project-ellipsis:hover {
+  fill: white;
+}
+
+.sidebar-project-options {
+  background-color: white;
+  width: 217px;
+  position: absolute;
+  padding: 5px 0;
+  z-index: 13;
+  right: -190px;
+  top: 29px;
+  border: 1px solid rgb(213, 220, 224);
+  border-radius: 4px;
+  box-shadow: 0 10px 15px 0 rgba(0,0,0,0.06);
+}
+
+.sidebar-project-option {
+  padding: 0 10px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.sidebar-project-option:hover {
+  background-color: #14aaf5;
+  color: white;
 }

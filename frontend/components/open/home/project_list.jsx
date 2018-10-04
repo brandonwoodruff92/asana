@@ -20,12 +20,16 @@ export default class ProjectList extends React.Component {
   render() {
     const projects = this.props.projects.map( (project) => {
       return (
-        <div className="project-item-container">
-          <ProjectItem
-            key={ project.id }
-            project={ project } />
-          <div className="project-item-name-text">
-            { project.name }
+        <div className="project-card">
+          <div className="project-item-container">
+            <ProjectItem
+              key={ project.id }
+              project={ project }
+              showProjectOptions={ this.props.showProjectOptions }
+              toggleProjectOptions={ this.props.toggleProjectOptions } />
+            <div className="project-item-name-text">
+              { project.name }
+            </div>
           </div>
         </div>
       );

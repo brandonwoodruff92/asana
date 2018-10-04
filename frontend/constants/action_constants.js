@@ -17,6 +17,12 @@ export const RECEIVE_USER = "RECEIVE_USER";
 
 export const RECEIVE_TEAM = "RECEIVE_TEAM";
 
+////////////////////////
+//Project List Actions//
+////////////////////////
+
+export const TOGGLE_PROJECT_OPTIONS = "TOGGLE_PROJECT_OPTIONS";
+
 ///////////////////
 //Project Actions//
 ///////////////////
@@ -40,6 +46,7 @@ export const REMOVE_TASK = "REMOVE_TASK";
 export const SET_SELECTED_LINK = "SET_SELECTED_LINK";
 export const TOGGLE_SIDEBAR = "TOGGLE_SIDEBAR";
 export const TOGGLE_TEAM_OPTIONS = "TOGGLE_TEAM_OPTIONS";
+export const TOGGLE_SIDEBAR_PROJECT_OPTIONS = "TOGGLE_SIDEBAR_PROJECT_OPTIONS";
 export const TOGGLE_USER_OPTIONS = "TOGGLE_USER_OPTIONS";
 export const TOGGLE_APP_OPTIONS = "TOGGLE_APP_OPTIONS";
 

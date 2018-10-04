@@ -1,3 +1,8 @@
+.project-index-screen {
+  background: white;
+  width: 100%;
+}
+
 .project-index {
   margin-top: 30px;
   margin-bottom: 75px;
@@ -29,20 +34,30 @@
   flex-wrap: wrap;
 }
 
+.project-card {
+  margin: 0 10px;
+  height: 211px;
+  transition: top .4s;
+  top: 0;
+  position: relative;
+  border-radius: 25px;
+  transition: all .4s;
+}
+
 .project-item-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 150px;
   height: 211px;
-  margin: 0 10px;
   padding: 15px 0;
-  transition: transform .4s;
 }
 
-.project-item-container:hover {
+.project-card:hover {
   cursor: pointer;
-  transform: translate3d(0, -5px, 0);
+  background-color: #f6f8f9;
+  transition: all .4s;
+  top: -5px;
 
   #project-item-ellipsis {
     opacity: 1;
@@ -119,4 +134,38 @@
   border: 2px dashed #b7bfc6;
   font-size: 20px;
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.project-options {
+  width: 217px;
+  padding: 5px 0;
+  background-color: white;
+  border: 1px solid rgb(213, 220, 224);
+  border-radius: 4px;
+  box-shadow: 0 10px 15px 0 rgba(0,0,0,0.06);
+  position: absolute;
+  left: 84px;
+  top: 32px;
+  z-index: 13;
+}
+
+.options-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.project-option {
+  height: 30px;
+  padding: 0 10px;
+  font-size: 13px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  display: flex;
+  align-items: center;
+  text-overflow: ellipsis;
+}
+
+.project-option:hover {
+  background-color: #14aaf5;
+  color: white;
 }

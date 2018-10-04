@@ -12,6 +12,9 @@ const sidebarReducer = (state = defaultState, action) => {
     case ActionConstants.TOGGLE_SIDEBAR:
       newState.show = state.show ? false : true;
       return newState;
+    case ActionConstants.TOGGLE_SIDEBAR_PROJECT_OPTIONS:
+      newState.showSidebarProjectOptions = action.projectId;
+      return newState;
     default:
       return state;
   }

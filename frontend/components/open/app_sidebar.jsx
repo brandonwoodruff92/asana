@@ -6,6 +6,7 @@ import SvgUtil from "../../util/svg_util";
 import TeamOptions from "./sidebar_items/team_options";
 import Favorites from "./sidebar_items/favorites";
 import SidebarProjectItem from "./sidebar_items/sidebar_project_item";
+import SidebarProjectOptions from "./sidebar_items/sidebar_project_options";
 
 //this.props.projects returns undefined
 
@@ -17,6 +18,7 @@ export default class AppSidebar extends React.Component {
     };
 
     this.handleSelect = this.handleSelect.bind(this);
+    this.toggleSidebarProjectOptions = this.toggleSidebarProjectOptions.bind(this);
     this.toggleTeamOptions = this.toggleTeamOptions.bind(this);
     this.toggleFavorites = this.toggleFavorites.bind(this);
   }
@@ -61,10 +63,20 @@ export default class AppSidebar extends React.Component {
     }
   }
 
+  toggleSidebarProjectOptions(id) {
+    return (e) => {
+      e.stopPropagation();
+      this.props.toggleSidebarProjectOptions(id);
+    };
+  }
+
   renderSidebarProjectItems() {
     return this.props.projects.map( (project) => {
       return (
-        <SidebarProjectItem project={ project } />
+        <SidebarProjectItem
+          project={ project }
+          showSidebarProjectOptions={ this.props.showSidebarProjectOptions }
+          toggleSidebarProjectOptions={ this.toggleSidebarProjectOptions } />
       );
     });
   }
@@ -130,6 +142,7 @@ export default class AppSidebar extends React.Component {
               </div>
             </ul>
             <ul className="sidebar-project-list">
+              { this.renderSidebarProjectItems() }
             </ul>
           </div>
         </ul>

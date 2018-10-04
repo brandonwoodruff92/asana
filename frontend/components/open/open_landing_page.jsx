@@ -5,7 +5,7 @@ import SvgUtil from "../../util/svg_util";
 import { logout } from "../../actions/session_actions";
 import { setSelectedLink, toggleTeamOptions, toggleUserOptions, toggleAppOptions } from "../../actions/open_landing_page_actions";
 import { openModal } from "../../actions/modal_actions";
-import { toggleSidebar } from "../../actions/sidebar_actions";
+import { toggleSidebar,toggleSidebarProjectOptions } from "../../actions/sidebar_actions";
 import { fetchAllProjects, createProject } from "../../actions/project_actions";
 
 import AppSidebar from "./app_sidebar";
@@ -63,10 +63,12 @@ class OpenLandingPage extends React.Component {
           projects={ this.props.projects }
           currentUser={ this.props.currentUser }
           showTeamOptions={ this.props.showTeamOptions }
+          showSidebarProjectOptions={ this.props.showSidebarProjectOptions }
           setSelectedLink={ this.props.setSelectedLink }
           openModal={ this.props.openModal }
           toggleSidebar={ this.props.toggleSidebar }
           toggleTeamOptions={ this.props.toggleTeamOptions }
+          toggleSidebarProjectOptions={ this.props.toggleSidebarProjectOptions }
           fetchProjects={ this.props.fetchProjects }
           createProject={ this.props.createProject }
           class={ sidebarClass } />
@@ -101,10 +103,11 @@ class OpenLandingPage extends React.Component {
 function mapStateToProps(state) {
   return {
     currentUser: state.entities.users[state.session.id],
-    projects: state.entities.projects,
+    projects: Object.values(state.entities.projects),
     selectedLink: state.ui.openLandingPage.selectedLink,
     sidebar: state.ui.sidebar.show,
     showTeamOptions: state.ui.openLandingPage.showTeamOptions,
+    showSidebarProjectOptions: state.ui.sidebar.showSidebarProjectOptions,
     showUserOptions: state.ui.openLandingPage.showUserOptions,
     showAppOptions: state.ui.openLandingPage.showAppOptions
   };
@@ -132,6 +135,9 @@ function mapDispatchToProps(dispatch) {
     },
     toggleTeamOptions: () => {
       return dispatch(toggleTeamOptions());
+    },
+    toggleSidebarProjectOptions: (id) => {
+      return dispatch(toggleSidebarProjectOptions(id));
     },
     toggleUserOptions: () => {
       return dispatch(toggleUserOptions());
