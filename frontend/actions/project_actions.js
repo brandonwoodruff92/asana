@@ -30,3 +30,11 @@ export const createProject = (project) => {
     });
   };
 };
+
+export const updateProject = (project) => {
+  return (dispatch) => {
+    return ProjectApiUtil.updateProject(project).then( (project) => {
+      return dispatch(receiveProject(project));
+    });
+  };
+};

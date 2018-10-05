@@ -36,7 +36,7 @@ const Modal = ({ modal, projectToUpdate, closeModal }) => {
 function mapStateToProps(state) {
   return {
     modal: state.ui.modal,
-    projectToUpdate: state.ui.projectList.projectToUpdate
+    projectToUpdate: state.entities.projects[state.ui.projectList.projectToUpdate]
   };
 }
 

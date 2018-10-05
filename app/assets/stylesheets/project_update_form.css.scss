@@ -1,0 +1,97 @@
+.project-update-modal {
+  width: 580px;
+  background-color: white;
+}
+
+.project-update-header {
+  padding: 10px 30px;
+  border-bottom: 1px solid rgb(224, 230, 232);
+  position: relative;
+}
+
+.project-update-form {
+  padding: 15px 30px;
+}
+
+.project-update-title {
+  display: flex;
+  font-size: 24px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.project-update-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: #b7bfc6;
+  cursor: pointer;
+}
+
+.project-update-close:hover {
+  color: rgb(50, 193, 255);
+}
+
+.secondary-title {
+  margin-left: 7px;
+  color: #848f99;
+}
+
+.update-input-row {
+  padding-bottom: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.form-label {
+  font-size: 12px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: rgb(132, 143, 153);
+  margin-right: 15px;
+  width: 100px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.update-input {
+  padding-left: 10px;
+  border: 1px solid rgb(213, 220, 224);
+  border-radius: 4px;
+  font-size: 13px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+#update-name-input {
+  width: 405px;
+  height: 40px;
+}
+
+#update-description-input {
+  width: 405px;
+  height: 60px;
+  padding-left: 10px;
+  padding-top: 10px;
+  resize: none;
+}
+
+.update-submit-row {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.update-submit {
+  color: white;
+  font-size: 13px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  height: 40px;
+  padding: 6px 15px;
+  background-color: rgb(20, 170, 245);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.update-submit:hover {
+  cursor: pointer;
+  background-color: rgb(0, 140, 227);
+}

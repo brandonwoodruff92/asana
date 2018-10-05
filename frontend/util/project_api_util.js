@@ -15,4 +15,14 @@ export default class ProjectApiUtil {
       }
     });
   }
+
+  static updateProject(project) {
+    return $.ajax({
+      method: "PATCH",
+      url: `api/projects/${project.id}`,
+      data: {
+        project
+      }
+    });
+  }
 }

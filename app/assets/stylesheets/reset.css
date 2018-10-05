@@ -49,6 +49,6 @@ input {
   outline: none;
   margin: 0px;
 }
-input[type="button"] {
+input[type="button"], textarea {
   outline: none;
 }

@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import * as ModalConstants from "../../../constants/modal_constants";
 
 import { openModal, closeModal } from "../../../actions/modal_actions";
+import { mountProjectUpdate } from "../../../actions/project_list_actions";
 
 const Selections = {
   ADD_FAVORITES: "Add Favorites",
@@ -29,6 +30,7 @@ class ProjectOptions extends React.Component {
         case Selections.ADD_FAVORITES:
           break;
         case Selections.EDIT:
+          this.props.mountProjectUpdate(this.props.project.id);
           this.props.openModal(ModalConstants.PROJECT_UPDATE);
           break;
         default:
@@ -73,6 +75,9 @@ function mapDispatchToProps(dispatch) {
     },
     closeModal: () => {
       return dispatch(closeModal());
+    },
+    mountProjectUpdate: (id) => {
+      return dispatch(mountProjectUpdate(id));
     }
   };
 }
