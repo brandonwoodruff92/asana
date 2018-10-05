@@ -44,7 +44,7 @@ class ProjectUpdate extends React.Component {
         </div>
         <div className="project-update-form">
           <div className="update-input-row">
-            <div className="form-label">
+            <div className="update-form-label">
               Project Name
             </div>
             <input
@@ -56,7 +56,7 @@ class ProjectUpdate extends React.Component {
             </input>
           </div>
           <div className="update-input-row">
-            <div className="form-label">
+            <div className="update-form-label">
               Description
             </div>
             <textarea

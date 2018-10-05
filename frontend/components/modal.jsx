@@ -5,6 +5,7 @@ import * as ModalConstants from "../constants/modal_constants";
 
 import ProjectForm from "./open/project/project_form";
 import ProjectUpdate from "./open/project/project_update";
+import DeleteProject from "./open/project/delete_project";
 
 const Modal = ({ modal, projectToUpdate, closeModal }) => {
   if (!modal) {
@@ -18,7 +19,10 @@ const Modal = ({ modal, projectToUpdate, closeModal }) => {
       component = <ProjectForm closeModal={ closeModal } />;
       break;
     case ModalConstants.PROJECT_UPDATE:
-      component = <ProjectUpdate closeModal={ closeModal }  project={ projectToUpdate }/>;
+      component = <ProjectUpdate closeModal={ closeModal }  project={ projectToUpdate } />;
+      break;
+    case ModalConstants.DELETE_PROJECT:
+      component = <DeleteProject closeModal={ closeModal } project={ projectToUpdate } />;
       break;
     default:
       return null;

@@ -25,4 +25,11 @@ export default class ProjectApiUtil {
       }
     });
   }
+
+  static deleteProject(id) {
+    return $.ajax({
+      method: "DELETE",
+      url: `api/projects/${id}`,
+    });
+  }
 }

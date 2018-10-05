@@ -1,0 +1,91 @@
+.delete-project-screen {
+  width: 580px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  box-shadow: 0 10px 15px 0 rgba(0,0,0,0.06);
+}
+
+.delete-project-header {
+  padding: 10px 30px;
+  border: 1px solid rgb(224, 230, 232);
+  position: relative;
+}
+
+.delete-project-title {
+  font-size: 24px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 500;
+  max-width: 560px;
+}
+
+.delete-project-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: #b7bfc6;
+  cursor: pointer;
+}
+
+.delete-project-close:hover {
+  color: rgb(50, 193, 255);
+}
+
+.delete-project-content {
+  padding: 15px 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.delete-confirmation-row {
+  padding-bottom: 15px;
+}
+
+.delete-confirmation-text {
+  color: #151b26;
+  font-size: 13px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.delete-submit-row {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 15px;
+}
+
+.delete-cancel-button {
+  padding: 0 15px;
+  border: 1px solid rgb(183, 191, 198);
+  color: #646f79;
+  font-size: 13px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  height: 40px;
+}
+
+.delete-submit-button {
+  padding: 0 15px;
+  font-size: 13px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: white;
+  background-color: rgb(255, 82, 99);
+}
+
+.delete-button {
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  margin-left: 10px;
+  transition: all 200ms;
+}
+
+.delete-cancel-button:hover {
+  background-color: #f6f8f9;
+  border-color: #646f79;
+  cursor: pointer;
+}
+
+.delete-submit-button:hover {
+  background-color: #ed4758;
+  cursor: pointer;
+}

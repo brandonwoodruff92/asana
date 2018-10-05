@@ -15,6 +15,13 @@ export const receiveProject = (project) => {
   };
 };
 
+export const removeProject = (projectId) => {
+  return {
+    type: ActionConstants.REMOVE_PROJECT,
+    projectId
+  };
+};
+
 export const fetchAllProjects = () => {
   return (dispatch) => {
     return ProjectApiUtil.fetchAllProjects().then( (projects) => {
@@ -35,6 +42,14 @@ export const updateProject = (project) => {
   return (dispatch) => {
     return ProjectApiUtil.updateProject(project).then( (project) => {
       return dispatch(receiveProject(project));
+    });
+  };
+};
+
+export const deleteProject = (id) => {
+  return (dispatch) => {
+    return ProjectApiUtil.deleteProject(id).then( (project) => {
+      return dispatch(removeProject(project.id));
     });
   };
 };

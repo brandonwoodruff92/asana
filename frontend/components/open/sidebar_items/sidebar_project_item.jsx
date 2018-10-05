@@ -9,9 +9,7 @@ const SidebarProjectItem = ({ project, showSidebarProjectOptions, toggleSidebarP
 
   if (showSidebarProjectOptions === project.id) {
     sidebarProjectOptions = (
-      <SidebarProjectOptions
-        project={ project }
-        toggleSidebarProjectOptions={ toggleSidebarProjectOptions }/>
+      <SidebarProjectOptions project={ project } />
     )
   } else {
     sidebarProjectOptions = null;
