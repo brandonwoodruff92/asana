@@ -6,6 +6,7 @@ import { Route, withRouter } from "react-router-dom";
 
 import TaskList from "./task_list";
 import TaskForm from "./task_form";
+import TaskOptions from "./task_options";
 
 class TaskPage extends React.Component {
   constructor(props) {
@@ -24,12 +25,13 @@ class TaskPage extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="task-page">
         <TaskList
           tasks={ this.props.tasks }
           createTask={ this.props.createTask }
           completeTask={ this.props.completeTask }
           mountTask={ this.props.mountTask } />
+        <TaskOptions />
         <Route
           path={ RouteConstants.TASKS_FORM }
           render={ () => <TaskForm

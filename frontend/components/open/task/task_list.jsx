@@ -27,6 +27,23 @@ export default class TaskList extends React.Component {
     };
   }
 
+  renderEmptyTasks() {
+    const emptyTasks = [];
+
+    for (let i = 1; i <= 11; i++) {
+      const emptyTask = (
+        <div className="task-row">
+          <div className="task-row-content">
+          </div>
+        </div>
+      );
+
+      emptyTasks.push(emptyTask);
+    }
+
+    return emptyTasks;
+  }
+
   render() {
     const tasks = this.props.tasks.map( (task) => {
       if (!task.complete) {
@@ -40,14 +57,35 @@ export default class TaskList extends React.Component {
     });
 
     return (
-      <div>
+      <div className="task-list task-list-pane">
         <div className="task-list-header">
-          <button onClick={ this.handleClick("task") }>Add Task</button>
-          <button onClick={ this.handleClick("section") }>Add Section</button>
+          <div className="task-button-section">
+            <div
+              id="add-task"
+              className="task-list-button"
+              onClick={ this.handleClick("task") }>
+              Add Task
+            </div>
+            <div
+              id="add-section"
+              className="task-list-button"
+              onClick={ this.handleClick("section") }>
+              Add Section
+            </div>
+          </div>
         </div>
         <div className="task-list-container">
-          <ul className="task-list">
-            { tasks }
+          <ul className="task-list-content">
+            <div className="today-task-list task-collection">
+              <div className="list-title">
+              </div>
+              <div className="list-content">
+                { tasks }
+              </div>
+            </div>
+            <div className="empty-task-list task-collection">
+              { this.renderEmptyTasks() }
+            </div>
           </ul>
         </div>
       </div>

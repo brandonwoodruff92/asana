@@ -1,0 +1,290 @@
+.task-page {
+  width: 100%;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
+  border-radius: 4px;
+}
+
+.task-list-pane {
+  width: 71%;
+  background-color: white;
+  min-width: 405px;
+  height: 880px;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+}
+
+.task-options {
+  margin-left: 15px;
+  width: 45%;
+  padding: 0 30px;
+}
+
+.task-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 30px;
+  border-bottom: 1px solid rgb(224, 230, 232);
+  height: 50px;
+}
+
+.task-button-section {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.task-list-button {
+  height: 30px;
+  padding: 0 9px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all .2s;
+}
+
+#add-task {
+  background-color: #14aaf5;
+  color: white;
+}
+
+#add-task:hover {
+  background-color: #008ce3;
+}
+
+#add-section {
+  background-color: white;
+  color: #646f79;
+  border: 1px solid rgb(183, 191, 198);
+  margin-left: 10px;
+}
+
+#add-section:hover {
+  color: #222b37;
+  border-color: #222b37;
+  background-color: #f6f8f9;
+}
+
+.task-options-section {
+  display: flex;
+  align-items: center;
+}
+
+.task-options-section-icons {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 5px;
+}
+
+.task-options-section svg {
+  width: 16px;
+  height: 16px;
+  fill: #848f99;
+  cursor: pointer;
+}
+
+#subtask:hover, #task-options-ellipsis:hover {
+  fill: #222b37;
+}
+
+#like:hover {
+  fill: #32c1ff;
+}
+
+.task-collection {
+  display: flex;
+  flex-direction: column;
+}
+
+.task-row {
+  height: 34px;
+  padding: 0 30px;
+}
+
+.task-row-content {
+  height: 100%;
+  border-bottom: 1px solid #e0e6e8;
+}
+
+.task-options-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 -30px;
+  padding-left: 30px;
+  padding-right: 15px;
+  border-bottom: 1px solid rgb(224, 230, 232);
+  height: 50px;
+}
+
+.task-button-section {
+  width: 50%;
+  margin-right: 10px;
+}
+
+.mark-complete-button {
+  background-color: white;
+  color: #646f79;
+  border: 1px solid rgb(183, 191, 198);
+}
+
+.mark-complete-button:hover {
+  color: #222b37;
+  border-color: #222b37;
+  background-color: #f6f8f9;
+
+  #check-mark {
+    fill: #222b37;
+  }
+}
+
+#check-mark {
+  width: 14px;
+  height: 16px;
+  margin-right: 5px;
+  fill: #646f79;
+}
+
+.task-title-input-row {
+  margin: 10px 0;
+  margin-left: -10px;
+  align-items: flex-start;
+  display: flex;
+}
+
+.task-options-input {
+  width: 100%;
+  color: #151b26;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  border: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  resize: none;
+}
+
+.task-title-input {
+  font-size: 24px;
+  padding: 4px 9px;
+}
+
+.task-options-input::placeholder {
+  color: #9ca6af;
+}
+
+.task-options-input:hover {
+  border-color: rgb(213, 220, 224);
+}
+
+.task-options-input:focus {
+  border-color: rgb(156, 166, 175);
+}
+
+.task-options-input:focus::placeholder {
+  color: transparent;
+}
+
+.task-assignment-row {
+  padding-bottom: 15px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e0e6e8;
+}
+
+.assignment-token {
+  display: flex;
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 18px;
+  padding-left: 3px;
+  padding-right: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  color: #646f79;
+  font-size: 13px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  cursor: pointer;
+  margin-right: 60px;
+}
+
+.assignment-token:hover {
+  border-color: rgb(100, 111, 121);
+  color: #222b37;
+
+  .token-icon {
+    border-style: solid;
+    border-color: rgb(100, 111, 121);
+  }
+}
+
+#unassigned-token:hover {
+  #assignee {
+    fill: #222b37;
+  }
+}
+
+#due-date-token:hover {
+  #calendar {
+    fill: #222b37;
+  }
+}
+
+.token-icon {
+  border: 1px dashed #b7bfc6;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.task-description-row {
+  margin: 15px 0;
+  display: flex;
+  align-items: flex-start;
+}
+
+.task-description-icon {
+  width: 30px;
+  height: 20px;
+  padding-top: 7px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+.task-description-input {
+  font-size: 13px;
+  padding-left: 9px;
+  padding-right: 9px;
+  padding-top: 4px;
+  padding-bottom: 35px;
+}
+
+#paragraph {
+  width: 12px;
+  height: 12px;
+  fill: #b7bfc6;
+}
+
+#assignee {
+  margin: 0;
+  fill: #848f99;
+}
+
+#calendar {
+  width: 16px;
+  height: 16px;
+  fill: #848f99;
+}

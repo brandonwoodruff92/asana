@@ -32,10 +32,6 @@
   }
 }
 
-.app-content {
-  display: flex;
-}
-
 .button-hidden {
   width: 0px;
   transition: width .1s;
@@ -72,6 +68,8 @@
 .app-content {
   height: 100%;
   background-color: #f6f8f9;
+  display: flex;
+  justify-content: center;
 }
 
 .app-header {
@@ -83,6 +81,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 1px;
 }
 
 .left-header {
