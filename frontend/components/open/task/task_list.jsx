@@ -16,7 +16,10 @@ export default class TaskList extends React.Component {
     return () => {
       switch (type) {
         case "task":
-          this.props.createTask({});
+          const task = {
+            assignee_id: this.props.currentUser.id
+          };
+          this.props.createTask(task);
           break;
         case "section":
         //Ignore for now...

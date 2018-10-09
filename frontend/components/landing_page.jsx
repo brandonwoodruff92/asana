@@ -13,7 +13,6 @@ const LandingPage = (props) => {
   } else {
     destination = RouteConstants.SPLASH_ROOT;
   }
-
   return (
     <Redirect from="/" to={ destination } />
   );

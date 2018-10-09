@@ -6,7 +6,7 @@ export const APP_ROOT = "/app";
 export const HOME = "/app/home";
 export const TEAM = "/app/team";
 export const TASKS = "/app/task";
-export const TASKS_FORM = "/app/tasks/:id";
+export const TASKS_FORM = "/app/task/:id";
 
 //////////
 //Splash//

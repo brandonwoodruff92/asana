@@ -19,7 +19,7 @@ class TaskPage extends React.Component {
 
   componentWillReceiveProps(newProps) {
     if (newProps.mountedTaskId && this.props.mountedTaskId !== newProps.mountedTaskId) {
-      this.props.history.push(RouteConstants.TASKS + `${newProps.mountedTaskId}`);
+      this.props.history.push(RouteConstants.TASKS + `/${newProps.mountedTaskId}`);
     }
   }
 
@@ -28,13 +28,13 @@ class TaskPage extends React.Component {
       <div className="task-page">
         <TaskList
           tasks={ this.props.tasks }
+          currentUser={ this.props.currentUser }
           createTask={ this.props.createTask }
           completeTask={ this.props.completeTask }
           mountTask={ this.props.mountTask } />
-        <TaskOptions />
         <Route
           path={ RouteConstants.TASKS_FORM }
-          render={ () => <TaskForm
+          render={ () => <TaskOptions
             task={ fetchTask(this.props.match.params.id) }
             completeTask={ this.props.completeTask }
             unmountTask={ this.props.unmountTask } /> } />
@@ -46,7 +46,8 @@ class TaskPage extends React.Component {
 function mapStateToProps(state) {
   return {
     tasks: Object.values(state.entities.tasks),
-    mountedTaskId: state.ui.taskList.mountedTaskId
+    mountedTaskId: state.ui.taskList.mountedTaskId,
+    currentUser: state.entities.users[state.session.id]
   };
 }
 

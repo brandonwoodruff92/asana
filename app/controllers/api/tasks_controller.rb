@@ -45,7 +45,9 @@ class Api::TasksController < ApplicationController
       :name,
       :description,
       :due_date,
-      :complete
+      :complete,
+      :section_id,
+      :assignee_id
     )
   end
 end
