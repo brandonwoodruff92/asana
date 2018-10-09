@@ -106,6 +106,17 @@
   fill: #32c1ff;
 }
 
+.task-options-close {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  color: #848f99;
+}
+
+.task-options-close:hover {
+  color: #222b37;
+}
+
 .task-collection {
   display: flex;
   flex-direction: column;

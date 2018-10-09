@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import SvgUtil from "../../../util/svg_util";
+import * as RouteConstants from "../../../constants/route_constants";
 
 // TODO: REPLACE INTERVAL REQUESTS WITH ACTION CABLES
 
@@ -13,11 +14,12 @@ class TaskOptions extends React.Component {
     };
 
     this.task = this.props.task;
+    this.closeTaskOptions = this.closeTaskOptions.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchTask(this.props.match.params.id);
-    this.interval = setInterval(() => this.props.updateTask(this.state), 100);
+    // this.interval = setInterval(() => this.props.updateTask(this.state), 100);
   }
 
   componentWillUpdate(newProps) {
@@ -31,7 +33,11 @@ class TaskOptions extends React.Component {
   }
 
   componentWillUnmount() {
-    clearInterval(this.interval);
+    // clearInterval(this.interval);
+  }
+
+  closeTaskOptions() {
+    this.props.history.push(RouteConstants.TASKS);
   }
 
   update(field) {
@@ -61,6 +67,11 @@ class TaskOptions extends React.Component {
             </div>
             <div className="task-options-section-icons">
               { SvgUtil.renderEllipsis("task-options-ellipsis") }
+            </div>
+            <div
+              className="task-options-close"
+              onClick={ this.closeTaskOptions }>
+              &#10005;
             </div>
           </div>
         </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import SvgUtil from "../../../util/svg_util";
+import * as RouteConstants from "../../../constants/route_constants";
 
 class TaskItem extends React.Component {
   constructor(props) {
@@ -10,7 +11,7 @@ class TaskItem extends React.Component {
   }
 
   handleClick() {
-    this.props.history.push(`/app/task/${this.props.task.id}`);
+    this.props.history.push(RouteConstants.TASKS + "/" + this.props.task.id);
   }
 
   markComplete(e) {
