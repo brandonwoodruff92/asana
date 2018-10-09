@@ -19,7 +19,7 @@ class TaskOptions extends React.Component {
 
   componentDidMount() {
     this.props.fetchTask(this.props.match.params.id);
-    // this.interval = setInterval(() => this.props.updateTask(this.state), 100);
+    this.interval = setInterval(() => this.props.updateTask(this.state), 100);
   }
 
   componentWillUpdate(newProps) {
@@ -33,7 +33,7 @@ class TaskOptions extends React.Component {
   }
 
   componentWillUnmount() {
-    // clearInterval(this.interval);
+    clearInterval(this.interval);
   }
 
   closeTaskOptions() {
