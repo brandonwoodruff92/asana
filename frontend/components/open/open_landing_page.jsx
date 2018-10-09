@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import SvgUtil from "../../util/svg_util";
+import * as RouteConstants from "../../constants/route_constants";
 
 import { logout } from "../../actions/session_actions";
 import { setSelectedLink, toggleTeamOptions, toggleUserOptions, toggleAppOptions } from "../../actions/open_landing_page_actions";
@@ -16,6 +17,24 @@ import Index from "./index";
 class OpenLandingPage extends React.Component {
   constructor(props) {
     super(props);
+  }
+
+  componentDidMount() {
+    const location = this.props.location.pathname;
+
+    switch (location) {
+      case RouteConstants.HOME:
+        this.props.setSelectedLink("Home");
+        break;
+      case RouteConstants.TASKS:
+        this.props.setSelectedLink(`My Tasks in ${this.props.currentUser.team.name}`);
+        break;
+      case RouteConstants.TEAM:
+        this.props.setSelectedLink(this.props.currentUser.team.name);
+        break;
+      default:
+        break;
+    }
   }
 
   renderUserOptions() {

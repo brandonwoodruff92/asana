@@ -107,7 +107,7 @@ export default class AppSidebar extends React.Component {
                 id="tasks-link"
                 className="sidebar-nav-link"
                 activeClassName="selected"
-                onClick={ this.handleSelect("My Tasks") }>
+                onClick={ this.handleSelect(`My Tasks in ${this.props.currentUser.team.name}`) }>
                 { SvgUtil.renderCheck() }
                 <p>My Tasks</p>
               </NavLink>
