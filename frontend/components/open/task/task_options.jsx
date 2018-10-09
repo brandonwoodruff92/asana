@@ -1,13 +1,45 @@
 import React from "react";
+import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 import SvgUtil from "../../../util/svg_util";
+
+// TODO: REPLACE INTERVAL REQUESTS WITH ACTION CABLES
 
 class TaskOptions extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      name: "",
+    };
+
+    this.task = this.props.task;
+  }
+
+  componentDidMount() {
+    this.props.fetchTask(this.props.match.params.id);
+    this.interval = setInterval(() => this.props.updateTask(this.state), 100);
+  }
+
+  componentWillUpdate(newProps) {
+    if (newProps.task && parseInt(this.props.match.params.id) !== newProps.task.id) {
+      this.setState(newProps.task);
+    }
+
+    if (newProps.task && !this.state.id) {
+      this.setState(newProps.task);
+    }
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
   }
 
   update(field) {
-
+    return (e) => {
+      this.setState({
+        [field]: e.target.value
+      });
+    };
   }
 
   render() {
@@ -37,7 +69,8 @@ class TaskOptions extends React.Component {
             className="task-title-input task-options-input"
             type="text"
             placeholder="Write a task name"
-            onChange={ this.update("title") }>
+            defaultValue={ this.state.name }
+            onChange={ this.update("name") }>
           </input>
         </div>
         <div className="task-assignment-row">
@@ -65,6 +98,7 @@ class TaskOptions extends React.Component {
           <textarea
             className="task-description-input task-options-input"
             placeholder="Description"
+            value={ this.state.description }
             onChange={ this.update("description") }>
           </textarea>
         </div>
@@ -73,4 +107,10 @@ class TaskOptions extends React.Component {
   }
 }
 
-export default TaskOptions;
+function mapStateToProps(state, oldProps) {
+  return {
+    task: state.entities.tasks[oldProps.match.params.id]
+  };
+}
+
+export default withRouter(connect(mapStateToProps)(TaskOptions));

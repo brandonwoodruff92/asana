@@ -27,7 +27,7 @@ class Task < ApplicationRecord
   class_name: "Task"
 
   def name=(name)
-    @name = name
+    write_attribute(:name, name)
     isSection = (name.last == ":")
   end
 

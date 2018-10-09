@@ -35,7 +35,8 @@ class TaskPage extends React.Component {
         <Route
           path={ RouteConstants.TASKS_FORM }
           render={ () => <TaskOptions
-            task={ fetchTask(this.props.match.params.id) }
+            fetchTask={ this.props.fetchTask }
+            updateTask={ this.props.updateTask }
             completeTask={ this.props.completeTask }
             unmountTask={ this.props.unmountTask } /> } />
       </div>

@@ -16,13 +16,15 @@ export default class TaskList extends React.Component {
     return () => {
       switch (type) {
         case "task":
-          const task = {
+          this.props.createTask({
             assignee_id: this.props.currentUser.id
-          };
-          this.props.createTask(task);
+          });
           break;
         case "section":
-        //Ignore for now...
+          this.props.createTask({
+            name: "New Section:",
+            assignee_id: this.props.currentUser.id
+          });
           break;
         default:
           return null;
@@ -30,12 +32,16 @@ export default class TaskList extends React.Component {
     };
   }
 
-  renderEmptyTasks() {
+  renderEmptyTasks(listSize) {
     const emptyTasks = [];
 
-    for (let i = 1; i <= 11; i++) {
+    const numEmpties = 12 - listSize;
+
+    for (let i = 1; i <= numEmpties; i++) {
       const emptyTask = (
-        <div className="task-row">
+        <div
+          className="task-row"
+          onClick={ this.handleClick("task") }>
           <div className="task-row-content">
           </div>
         </div>
@@ -87,7 +93,7 @@ export default class TaskList extends React.Component {
               </div>
             </div>
             <div className="empty-task-list task-collection">
-              { this.renderEmptyTasks() }
+              { this.renderEmptyTasks(tasks.length) }
             </div>
           </ul>
         </div>

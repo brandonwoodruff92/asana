@@ -26,7 +26,7 @@ class TaskApiUtil {
   static updateTask(task) {
     return $.ajax({
       method: "PATCH",
-      url: `api/tasks/${task}`,
+      url: `api/tasks/${task.id}`,
       data: {
         task
       }
