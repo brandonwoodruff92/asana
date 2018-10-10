@@ -22,18 +22,12 @@ class OpenLandingPage extends React.Component {
   componentDidMount() {
     const location = this.props.location.pathname;
 
-    switch (location) {
-      case RouteConstants.HOME:
-        this.props.setSelectedLink("Home");
-        break;
-      case RouteConstants.TASKS:
-        this.props.setSelectedLink(`My Tasks in ${this.props.currentUser.team.name}`);
-        break;
-      case RouteConstants.TEAM:
-        this.props.setSelectedLink(this.props.currentUser.team.name);
-        break;
-      default:
-        break;
+    if (location.includes("home")) {
+      this.props.setSelectedLink("Home");
+    } else if (location.includes("task")) {
+      this.props.setSelectedLink(`My Tasks in ${this.props.currentUser.team.name}`);
+    } else if (location.includes("team")) {
+      this.props.setSelectedLink(this.props.currentUser.team.name);
     }
   }
 

@@ -88,7 +88,7 @@ class TaskOptions extends React.Component {
             placeholder="Write a task name"
             value={ task ? task.name : "" }
             onChange={ this.update("name") }
-            onKeyPress={ this.handleKeyPress }>
+            onKeyDown={ this.handleKeyPress }>
           </input>
         </div>
         <div className="task-assignment-row">
@@ -118,7 +118,7 @@ class TaskOptions extends React.Component {
             placeholder="Description"
             value={ task ? task.description : "" }
             onChange={ this.update("description") }
-            onKeyPress={ this.handleKeyPress }>
+            onKeyDown={ this.handleKeyPress }>
           </textarea>
         </div>
       </div>

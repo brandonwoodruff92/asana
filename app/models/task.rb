@@ -28,15 +28,15 @@ class Task < ApplicationRecord
 
   def name=(name)
     write_attribute(:name, name)
-    isSection = (name.last == ":")
+    self.isSection = (name.last == ":")
   end
 
   def isSection=(isSection)
     if isSection
-      @section_id = nil;
+      write_attribute(:section_id, nil)
     end
 
-    @isSection = isSection
+    write_attribute(:isSection, isSection)
   end
 
   def project_order(project)
