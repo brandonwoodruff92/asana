@@ -27,6 +27,7 @@ class TaskItem extends React.Component {
         <div className="task-row-content">
           <div className="left-row-content">
             <div className="task-drag-button">
+              { SvgUtil.renderDragable() }
             </div>
             { SvgUtil.renderCheck("task-complete-button", this.markComplete) }
             <div className="task-name-display">

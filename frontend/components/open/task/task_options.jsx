@@ -15,6 +15,7 @@ class TaskOptions extends React.Component {
 
     this.task = this.props.task;
     this.closeTaskOptions = this.closeTaskOptions.bind(this);
+    this.markComplete = this.markComplete.bind(this);
   }
 
   componentDidMount() {
@@ -36,6 +37,10 @@ class TaskOptions extends React.Component {
     clearInterval(this.interval);
   }
 
+  markComplete() {
+    this.props.completeTask(this.props.task);
+  }
+
   closeTaskOptions() {
     this.props.history.push(RouteConstants.TASKS);
   }
@@ -53,7 +58,9 @@ class TaskOptions extends React.Component {
       <div className="task-options task-list-pane">
         <div className="task-options-header">
           <div className="task-button-section">
-            <div className="mark-complete-button task-list-button">
+            <div
+              className="mark-complete-button task-list-button"
+              onClick={ this.markComplete }>
               { SvgUtil.renderCheckMark() }
               Mark Complete
             </div>

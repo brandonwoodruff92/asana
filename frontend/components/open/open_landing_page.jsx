@@ -37,6 +37,12 @@ class OpenLandingPage extends React.Component {
     }
   }
 
+  getUserInitials() {
+    const name = this.props.currentUser.name.split(" ");
+
+    return name[0][0] + name[1][0];
+  }
+
   renderUserOptions() {
     if (this.props.showUserOptions) {
       return (
@@ -107,7 +113,7 @@ class OpenLandingPage extends React.Component {
               <div
                 className="user-options-button"
                 onClick={ this.props.toggleUserOptions }>
-                BW
+                { `${this.getUserInitials().toUpperCase()}` }
               </div>
               { this.renderUserOptions() }
             </div>

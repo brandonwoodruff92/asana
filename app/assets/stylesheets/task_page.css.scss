@@ -133,6 +133,10 @@
 
 .task-type:hover {
   background-color: #f6f8f9;
+
+  #dragable {
+    visibility: visible;
+  }
 }
 
 .task-row-content {
@@ -155,6 +159,22 @@
 .task-drag-button {
   min-width: 30px;
   height: 34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#dragable {
+  width: 16px;
+  height: 16px;
+  fill: #b7bfc6;
+  transition: fill 100ms ease-in-out;
+  visibility: hidden;
+}
+
+#dragable:hover {
+  fill: #848f99;
+  cursor: grab;
 }
 
 #task-complete-button {
