@@ -9,7 +9,7 @@ const LandingPage = (props) => {
   let destination;
 
   if (props.loggedIn) {
-    destination = RouteConstants.APP_ROOT;
+    destination = RouteConstants.HOME;
   } else {
     destination = RouteConstants.SPLASH_ROOT;
   }

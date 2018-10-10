@@ -1,8 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
+import { ActionCable } from "react-actioncable-provider";
 import SvgUtil from "../../../util/svg_util";
 import * as RouteConstants from "../../../constants/route_constants";
+import { debounce } from "../../../util/debounce_util";
 
 // TODO: REPLACE INTERVAL REQUESTS WITH ACTION CABLES
 
@@ -13,28 +15,20 @@ class TaskOptions extends React.Component {
       name: "",
     };
 
-    this.task = this.props.task;
     this.closeTaskOptions = this.closeTaskOptions.bind(this);
     this.markComplete = this.markComplete.bind(this);
+    this.update = this.update.bind(this);
+    this.handleKeyPress = debounce(this.handleKeyPress.bind(this), 1000);
   }
 
   componentDidMount() {
     this.props.fetchTask(this.props.match.params.id);
-    this.interval = setInterval(() => this.props.updateTask(this.state), 100);
   }
 
   componentWillUpdate(newProps) {
-    if (newProps.task && parseInt(this.props.match.params.id) !== newProps.task.id) {
-      this.setState(newProps.task);
-    }
-
     if (newProps.task && !this.state.id) {
       this.setState(newProps.task);
     }
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.interval);
   }
 
   markComplete() {
@@ -46,16 +40,26 @@ class TaskOptions extends React.Component {
   }
 
   update(field) {
+    let that = this;
     return (e) => {
-      this.setState({
-        [field]: e.target.value
-      });
+      // this.setState({
+      //   [field]: e.target.value
+      // });
+      that.props.task[field] = e.target.value;
+      that.refs.taskActionCable.perform("speak_task", that.props.task);
     };
   }
 
+  handleKeyPress() {
+    this.props.updateTask(this.props.task);
+  }
+
   render() {
+    const task = this.props.task;
+
     return (
       <div className="task-options task-list-pane">
+        <ActionCable ref="taskActionCable" channel={ {channel: "TaskChannel", room: "RoomRoom"} } />
         <div className="task-options-header">
           <div className="task-button-section">
             <div
@@ -87,8 +91,9 @@ class TaskOptions extends React.Component {
             className="task-title-input task-options-input"
             type="text"
             placeholder="Write a task name"
-            defaultValue={ this.state.name }
-            onChange={ this.update("name") }>
+            defaultValue={ task ? task.name : "" }
+            onChange={ this.update("name") }
+            onKeyPress={ this.handleKeyPress }>
           </input>
         </div>
         <div className="task-assignment-row">
@@ -117,7 +122,8 @@ class TaskOptions extends React.Component {
             className="task-description-input task-options-input"
             placeholder="Description"
             value={ this.state.description }
-            onChange={ this.update("description") }>
+            onChange={ this.update("description") }
+            onKeyPress={ this.handleKeyPress }>
           </textarea>
         </div>
       </div>
