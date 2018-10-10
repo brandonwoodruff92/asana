@@ -125,17 +125,34 @@
 .task-row {
   height: 34px;
   padding: 0 30px;
+  cursor: pointer;
 }
 
-.task-type {
-  cursor: pointer;
+.task-row:hover {
+  #dragable {
+    visibility: visible;
+  }
 }
 
 .task-type:hover {
   background-color: #f6f8f9;
+}
 
-  #dragable {
-    visibility: visible;
+.section-type {
+  .task-row-content {
+    border-bottom: 1px solid black;
+  }
+
+  .task-name-display {
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  #task-complete-button {
+    height: 0px;
+    width: 0px;
+    min-width: 0px;
+    margin-right: 0px;
   }
 }
 

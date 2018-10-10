@@ -28,9 +28,11 @@ class TaskItem extends React.Component {
   }
 
   render() {
+    const classType = this.props.task.isSection ? "section-type" : "task-type";
+
     return (
       <div
-        className="task-row task-type"
+        className={ `task-row ${classType}` }
         onClick={ this.handleClick }>
         <ActionCable ref="taskActionCable" channel={ {channel: "TaskChannel", room: "RoomRoom"} } onReceived={ this.handleReceiveTask } />
         <div className="task-row-content">

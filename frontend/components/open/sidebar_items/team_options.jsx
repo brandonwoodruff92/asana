@@ -15,14 +15,6 @@ class TeamOptions extends React.Component {
     document.removeEventListener("mousedown", this.handleClick);
   }
 
-  // handleClickOutside(e) {
-  //   const node = document.getElementById("team-options");
-  //   if (!node.contains(e.target)) {
-  //     console.log("hello");
-  //     this.props.toggleTeamOptions();
-  //   }
-  // }
-
   handleClick(e) {
     const node = document.getElementById("team-options");
     if (!node.contains(e.target)) {

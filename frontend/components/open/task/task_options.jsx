@@ -16,7 +16,7 @@ class TaskOptions extends React.Component {
     this.closeTaskOptions = this.closeTaskOptions.bind(this);
     this.markComplete = this.markComplete.bind(this);
     this.update = this.update.bind(this);
-    this.handleKeyPress = debounce(this.handleKeyPress.bind(this), 1000);
+    this.handleKeyPress = debounce(this.handleKeyPress.bind(this), 500);
   }
 
   componentDidMount() {
@@ -31,6 +31,7 @@ class TaskOptions extends React.Component {
 
   markComplete() {
     this.props.completeTask(this.props.task);
+    this.closeTaskOptions();
   }
 
   closeTaskOptions() {
