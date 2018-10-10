@@ -6,8 +6,6 @@ import SvgUtil from "../../../util/svg_util";
 import * as RouteConstants from "../../../constants/route_constants";
 import { debounce } from "../../../util/debounce_util";
 
-// TODO: REPLACE INTERVAL REQUESTS WITH ACTION CABLES
-
 class TaskOptions extends React.Component {
   constructor(props) {
     super(props);
@@ -42,9 +40,6 @@ class TaskOptions extends React.Component {
   update(field) {
     let that = this;
     return (e) => {
-      // this.setState({
-      //   [field]: e.target.value
-      // });
       that.props.task[field] = e.target.value;
       that.refs.taskActionCable.perform("speak_task", that.props.task);
     };
@@ -91,7 +86,7 @@ class TaskOptions extends React.Component {
             className="task-title-input task-options-input"
             type="text"
             placeholder="Write a task name"
-            defaultValue={ task ? task.name : "" }
+            value={ task ? task.name : "" }
             onChange={ this.update("name") }
             onKeyPress={ this.handleKeyPress }>
           </input>
@@ -121,7 +116,7 @@ class TaskOptions extends React.Component {
           <textarea
             className="task-description-input task-options-input"
             placeholder="Description"
-            value={ this.state.description }
+            value={ task ? task.description : "" }
             onChange={ this.update("description") }
             onKeyPress={ this.handleKeyPress }>
           </textarea>
